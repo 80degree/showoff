@@ -23,7 +23,7 @@ You can run showoff using [binaries for your system](https://github.com/worthywo
 
 | Platform | Status | Latest |
 |----------|--------| ------- |
-| Windows | Awaits building | v1.1.0 |
+| Windows | Partial-support(Has issues) | v1.1.1 |
 | Linux | Ready ✅ | v1.1.1 |
 | macOS | Could be later ⚠️ | No builds uploaded |
 
