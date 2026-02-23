@@ -30,40 +30,57 @@ elif sport == 2:
 
 def add_match():
     if sport == 1:
-        new_game = {
-            "name": input(f"{texts["game_name"]}: "),
-            "date": input(f"{texts["game_date"]}: "),
-            "position": input(f'{texts["game_position"]}: '),
-            "minutes": int(input(f'{texts["game_minutes"]}: ')),
-            "points": int(input(f"{texts["game_points"]}: ")),
-            "assists": int(input(f"{texts["game_assists"]}: ")),
-            "2pt_attempts": int(input(f'{texts["game_2pta"]}: ')),
-            "3pt_attempts": int(input(f'{texts["game_3pta"]}: ')),
-            "2ptshots_made": int(input(f'{texts["game_2ptm"]}: ')),
-            "3ptshots_made": int(input(f'{texts["game_3ptm"]}: ')),
-            "rebounds": int(input(f"{texts["game_rebounds"]}: ")),
-            "blocks": int(input(f"{texts["game_blocks"]}: ")),
-            "steals": int(input(f"{texts["game_steals"]}: ")),
-            "personal_fouls": int(input(f"{texts["game_personalfouls"]}: ")),
-            "missedFT": int(input(f"{texts["game_missedFT"]}: ")),
-            "turnovers": int(input(f"{texts["game_turnovers"]}: ")),
-            "Won": input(f"{texts["game_result"]}: ")
-        }
+        while True:
+            try:
+                new_game = {
+                    "name": input(f"{texts["game_name"]}: "),
+                    "date": input(f"{texts["game_date"]}: "),
+                    "position": input(f'{texts["game_position"]}: '),
+                    "minutes": int(input(f'{texts["game_minutes"]}: ')),
+                    "points": int(input(f"{texts["game_points"]}: ")),
+                    "assists": int(input(f"{texts["game_assists"]}: ")),
+                    "2pt_attempts": int(input(f'{texts["game_2pta"]}: ')),
+                    "3pt_attempts": int(input(f'{texts["game_3pta"]}: ')),
+                    "2ptshots_made": int(input(f'{texts["game_2ptm"]}: ')),
+                    "3ptshots_made": int(input(f'{texts["game_3ptm"]}: ')),
+                    "rebounds": int(input(f"{texts["game_rebounds"]}: ")),
+                    "blocks": int(input(f"{texts["game_blocks"]}: ")),
+                    "steals": int(input(f"{texts["game_steals"]}: ")),
+                    "personal_fouls": int(input(f"{texts["game_personalfouls"]}: ")),
+                    "missedFT": int(input(f"{texts["game_missedFT"]}: ")),
+                    "turnovers": int(input(f"{texts["game_turnovers"]}: ")),
+                    "Won": input(f"{texts["game_result"]}: ")
+                }
+                break
+            except ValueError:
+                print('Invalid input')
+            
+            except Exception as e:
+                print(f'ERROR: {e}')
     
     elif sport == 2:
-        new_game = {
-            "name": input(f"{texts["game_name"]}: "),
-            "date": input(f"{texts["game_date"]}: "),
-            "position": input(f'{texts["game_position"]}: '),
-            "minutes": int(input(f'{texts["game_minutes"]}: ')),
-            "goals": int(input(f'{texts["game_goals"]}: ')),
-            "assists": int(input(f'{texts["game_assists"]}: ')),
-            "shots": int(input(f'{texts["game_shots"]}: ')),
-            "yellow_cards": int(input(f"{texts["game_yellowcards"]}: ")),
-            "red_cards": int(input(f'{texts["game_redcards"]}: ')),
-            "fouls": int(input(f'{texts["game_personalfouls"]}: ')),
-            "Won": input(f"{texts["game_result"]}: ")
-        }
+        while True:
+            try:
+                new_game = {
+                    "name": input(f"{texts["game_name"]}: "),
+                    "date": input(f"{texts["game_date"]}: "),
+                    "position": input(f'{texts["game_position"]}: '),
+                    "minutes": int(input(f'{texts["game_minutes"]}: ')),
+                    "goals": int(input(f'{texts["game_goals"]}: ')),
+                    "assists": int(input(f'{texts["game_assists"]}: ')),
+                    "shots": int(input(f'{texts["game_shots"]}: ')),
+                    "yellow_cards": int(input(f"{texts["game_yellowcards"]}: ")),
+                    "red_cards": int(input(f'{texts["game_redcards"]}: ')),
+                    "fouls": int(input(f'{texts["game_personalfouls"]}: ')),
+                    "Won": input(f"{texts["game_result"]}: ")
+                }
+                break
+            except ValueError:
+                print('Invalid input')
+            
+            except Exception as e:
+                print(f'ERROR: {e}')
+            
     
     db["games"].append(new_game)
 

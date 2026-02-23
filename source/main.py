@@ -2,6 +2,7 @@ import data_handler
 import ui_handler
 import os
 import sys
+import subprocess
 from ui_handler import Menu
 import statistics_handler
 import export_handler
@@ -53,7 +54,7 @@ def main():
             Menu.clear_screen()
 
         elif user_choice == 5:
-            os.execv(sys.executable, ['python'] + sys.argv)
+            os.execl(sys.executable, sys.executable, *sys.argv)
 
         elif user_choice == 6:
             Menu.clear_screen()
@@ -62,7 +63,7 @@ def main():
             Menu.clear_screen()
 
         elif user_choice == 7:
-            os.execv(sys.executable, ['python'] + sys.argv)
+            os.execl(sys.executable, sys.executable,  *sys.argv)
 
         elif user_choice == 8:
             break
@@ -71,4 +72,4 @@ def main():
 if __name__ == '__main__':
     main()
     db.save()
-    exit()
+    sys.exit(0)

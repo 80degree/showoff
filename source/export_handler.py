@@ -1,8 +1,11 @@
 import csv
 import json
+from datetime import datetime
 from ui_handler import texts
 
-def export_to_csv(sport, filename='export.csv'):
+now = datetime.now()
+
+def export_to_csv(sport, filename=f'export_{now.strftime("%d%m%Y_%H%M%S")}.csv'):
     if sport == 1:
         try:
             with open('basketball.json', 'r', encoding='utf-8') as f:
