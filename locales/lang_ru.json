@@ -20,7 +20,7 @@
     "game_personalfouls": "Введите фолы",
     "game_missedFT": "Введите промазанные штрафные",
     "game_turnovers": "Введите потери",
-    "game_result": "Введите результат(True - победа/False - проигрыш)",
+    "game_result": "Введите результат(W - победа/L - проигрыш)",
     "game_goals": "Введите голы",
     "game_shots": "Введите удары",
     "game_yellowcards": "Введите желтые карточки",

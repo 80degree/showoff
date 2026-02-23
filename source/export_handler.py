@@ -21,7 +21,7 @@ def export_to_csv(sport, filename='export.csv'):
             print(f'{texts["no_games"]}')
             return
     
-        headers = ['Date', 'POS', 'MIN', 'PTS', 'AST', '2PTA', '2PTM', '3PTA', '3PTM', 'REB', 'BLK', 'STL', 'PF', 'Missed Free Throws', 'Turnovers', 'WIN']
+        headers = ['Date', 'POS', 'MIN', 'PTS', 'AST', '2PTA', '2PTM', '3PTA', '3PTM', 'REB', 'BLK', 'STL', 'PF', 'Missed Free Throws', 'Turnovers', 'Result']
 
         key_mapping = {
         'Date': 'date',
@@ -39,7 +39,7 @@ def export_to_csv(sport, filename='export.csv'):
         'PF': 'personal_fouls',
         'Missed Free Throws': 'missedFT',
         'Turnovers': 'turnovers',
-        'WIN': 'Won'
+        'Result': 'Won'
         }
 
         with open(filename, 'w', newline='', encoding='utf-8') as csvf:
@@ -67,7 +67,7 @@ def export_to_csv(sport, filename='export.csv'):
             print(f'{texts["no_games"]}')
             return
     
-        headers = ['Date', 'POS', 'MIN', 'GOALS', 'AST', 'SHOTS', 'Yellow cards', 'Red cards', 'Fouls', 'WIN']
+        headers = ['Date', 'POS', 'MIN', 'GOALS', 'AST', 'SHOTS', 'Yellow cards', 'Red cards', 'Fouls', 'Result']
 
         key_mapping = {
         'Date': 'date',
@@ -79,7 +79,7 @@ def export_to_csv(sport, filename='export.csv'):
         'Yellow cards': 'yellow_cards',
         'Red cards': 'red_cards',
         'Fouls': 'fouls',
-        'WIN': 'Won'
+        'Result': 'Won'
         }
 
         with open(filename, 'w', newline='', encoding='utf-8') as csvf:

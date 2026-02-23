@@ -13,7 +13,7 @@ else:
     print("Out of range.")
     os.execv(sys.executable, ['python'] + sys.argv)
 
-with open(f'localisation/lang_{lang}.json', 'r', encoding='utf-8') as f:
+with open(f'locales/lang_{lang}.json', 'r', encoding='utf-8') as f:
     texts = json.load(f)
 
 MENU = f"""

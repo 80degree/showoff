@@ -47,7 +47,7 @@ def add_match():
             "personal_fouls": int(input(f"{texts["game_personalfouls"]}: ")),
             "missedFT": int(input(f"{texts["game_missedFT"]}: ")),
             "turnovers": int(input(f"{texts["game_turnovers"]}: ")),
-            "Won": bool(input(f"{texts["game_result"]}: "))
+            "Won": input(f"{texts["game_result"]}: ")
         }
     
     elif sport == 2:
@@ -62,7 +62,7 @@ def add_match():
             "yellow_cards": int(input(f"{texts["game_yellowcards"]}: ")),
             "red_cards": int(input(f'{texts["game_redcards"]}: ')),
             "fouls": int(input(f'{texts["game_personalfouls"]}: ')),
-            "Won": bool(input(f"{texts["game_result"]}: "))
+            "Won": input(f"{texts["game_result"]}: ")
         }
     
     db["games"].append(new_game)

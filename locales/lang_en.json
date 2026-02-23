@@ -20,7 +20,7 @@
     "game_personalfouls": "Enter fouls",
     "game_missedFT": "Enter missed free throws",
     "game_turnovers": "Enter turnovers",
-    "game_result": "Enter result(True for W/False for L)",
+    "game_result": "Enter result(W/L)",
     "game_goals": "Enter goals",
     "game_shots": "Enter shots",
     "game_yellowcards": "Enter yellow cards",

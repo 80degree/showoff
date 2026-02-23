@@ -68,7 +68,7 @@ If you want to build yours binary:
 
 2. Build:
    ```bash
-   python -m nuitka --onefile --standalone --include-package-data=locales main.py
+   python -m nuitka --onefile --standalone --include-package-data=localisation main.py
    ```
 
 3. A ready binary will be built in the same folder
