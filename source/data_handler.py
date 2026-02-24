@@ -1,11 +1,24 @@
 import json
 from ui_handler import texts
 
-sport = int(input(f'''
+try:
+    sport = int(input(f'''
 {texts["select_sport"]}:
 [1] - {texts["basketball"]}
 [2] - {texts["soccer"]}
 '''))
+except IndexError:
+    print('Out of range')
+    input(f'{texts["enter_to_continue"]}')
+except ValueError:
+    print('Invalid input')
+    input(f'{texts["enter_to_continue"]}')
+except Exception as e:
+    print(f'ERROR: {e}')
+    input(f'{texts["enter_to_continue"]}')
+
+positions = ['PG', 'SG', 'SF', 'PF', 'C']
+
 if sport == 1:
     try:
         with open('basketball.json', 'r', encoding='utf-8') as f:
@@ -15,6 +28,7 @@ if sport == 1:
         db = {"player": player, "games": []}
     except Exception as e:
         print(f'ERROR: {e}')
+        input(f'{texts["enter_to_continue"]}')
 
 elif sport == 2:
     try:
@@ -25,7 +39,7 @@ elif sport == 2:
         db = {"player": player, "games": []}
     except Exception as e:
         print(f'ERROR: {e}')
-
+        input(f'{texts["enter_to_continue"]}')
 
 
 def add_match():
@@ -35,7 +49,7 @@ def add_match():
                 new_game = {
                     "name": input(f"{texts["game_name"]}: "),
                     "date": input(f"{texts["game_date"]}: "),
-                    "position": input(f'{texts["game_position"]}: '),
+                    "position": positions[int(input(f'{texts["game_position"]}')) - 1],
                     "minutes": int(input(f'{texts["game_minutes"]}: ')),
                     "points": int(input(f"{texts["game_points"]}: ")),
                     "assists": int(input(f"{texts["game_assists"]}: ")),
@@ -54,9 +68,14 @@ def add_match():
                 break
             except ValueError:
                 print('Invalid input')
+                input(f'{texts["enter_to_continue"]}')
+            except IndexError:
+                print('Out of range')
+                input(f'{texts["enter_to_continue"]}')
             
             except Exception as e:
                 print(f'ERROR: {e}')
+                input(f'{texts["enter_to_continue"]}')
     
     elif sport == 2:
         while True:
@@ -77,9 +96,11 @@ def add_match():
                 break
             except ValueError:
                 print('Invalid input')
+                input(f'{texts["enter_to_continue"]}')
             
             except Exception as e:
                 print(f'ERROR: {e}')
+                input(f'{texts["enter_to_continue"]}')
             
     
     db["games"].append(new_game)
@@ -87,8 +108,28 @@ def add_match():
 
 def save():
     if sport == 1:
-        with open('basketball.json', 'w', encoding='utf-8') as f:
-            json.dump(db, f, ensure_ascii=False, indent=4)
+        try:
+            with open('basketball.json', 'w', encoding='utf-8') as f:
+                json.dump(db, f, ensure_ascii=False, indent=4)
+                return
+        except FileNotFoundError:
+            print('File basketball.json does not exist.')
+            input(f'{texts["enter_to_continue"]}')
+            return
+        except Exception as e:
+            print(f'ERROR: {e}')
+            input(f'{texts["enter_to_continue"]}')
+            return
     if sport == 2:
-        with open('soccer.json', 'w', encoding='utf-8') as f:
-            json.dump(db, f, ensure_ascii=False, indent=4)
+        try:
+            with open('soccer.json', 'w', encoding='utf-8') as f:
+                json.dump(db, f, ensure_ascii=False, indent=4)
+                return
+        except FileNotFoundError:
+            print('File soccer.json does not exist.')
+            input(f'{texts["enter_to_continue"]}')
+            return
+        except Exception as e:
+            print(f'ERROR: {e}')
+            input(f'{texts["enter_to_continue"]}')
+            return

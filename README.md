@@ -1,4 +1,5 @@
 # Showoff - A simple sports stats tracker
+
 ![Version](https://img.shields.io/badge/version-1.1.1-blue)
 ![Python](https://img.shields.io/badge/python-3.11+-green)
 ![License](https://img.shields.io/badge/license-MIT-orange)
@@ -17,12 +18,13 @@ Currently supports basketball, soccer.
 You can run showoff using [binaries for your system](https://github.com/worthyworm/showoff/releases/latest) or using the source code.
 
 ### Using ready-to-use binaries(recommended)
+
 > Binaries are an already pre-built packages for your system.
 
-**Binaries status**
+### Binaries status
 
 | Platform | Status | Latest |
-|----------|--------| ------- |
+| ---------- | -------- | ------- |
 | Windows | Partial-support(Has issues) | v1.1.1 |
 | Linux | Ready ✅ | v1.1.1 |
 | macOS | Could be later ⚠️ | No builds uploaded |
@@ -38,20 +40,27 @@ You can run showoff using [binaries for your system](https://github.com/worthywo
    > Windows defender may detect showoff as a malware, so it is recommended to disable defender / add showoff to exceptions
     - **Windows**: Double-click 'showoff.exe'
     - **Linux/macOS**:
+
       ```bash
       ./showoff.bin
       ```
+
 ---
 
 ### Using the source code
 
+> Note:  Using the source code is NOT reccomended. The code is being worked on and some features may be unfinished
+
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/worthyworm/showoff.git
    cd showoff
    cd source
    ```
+
 2. Run:
+
    ```bash
    python main.py
    ```
@@ -59,16 +68,25 @@ You can run showoff using [binaries for your system](https://github.com/worthywo
 ---
 
 ### Building a binary
+
 If you want to build yours binary:
 
 1. Install Nuitka:
+
    ```bash
    pip install nuitka
    ```
 
 2. Build:
+
    ```bash
    python -m nuitka --onefile --standalone --include-package-data=locales source/main.py
    ```
 
 3. A ready binary will be built in the same folder
+
+---
+
+## Help us with translation
+
+Feel free to help with translating on other languages!

@@ -1,11 +1,17 @@
-import data_handler
-import ui_handler
-import os
-import sys
-import subprocess
-from ui_handler import Menu
-import statistics_handler
-import export_handler
+try:
+    import data_handler
+    import ui_handler
+    import os
+    import sys
+    from ui_handler import Menu
+    import statistics_handler
+    import export_handler
+except FileNotFoundError:
+    print('Some files were not found. The program will not run, try to redownload the program or open an issue, if reinstalling didnt help')
+    input(f'{ui_handler.texts["enter_to_continue"]}')
+except ModuleNotFoundError as e:
+    print(f'Some modules were not installed on your computer.\n Error:{e}')
+    input(f'{ui_handler.texts["enter_to_continue"]}')
 
 db = data_handler
 ui = ui_handler
