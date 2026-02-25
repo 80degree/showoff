@@ -10,13 +10,13 @@ def stats_review():
     if sport == 1:
         all_points = sum(game["points"] for game in games)
         all_minutes = sum(game["minutes"] for game in games)
-        all_2pt = sum(game["2ptshots_made"] for game in games)
-        all_3pt = sum(game["3ptshots_made"] for game in games)
+        all_2pt = sum(game["2pt_shots_made"] for game in games)
+        all_3pt = sum(game["3pt_shots_made"] for game in games)
         all_assists = sum(game["assists"] for game in games)
         all_rebounds = sum(game["rebounds"] for game in games)
         all_blocks = sum(game["blocks"] for game in games)
         all_steals = sum(game["steals"] for game in games)
-        all_missed = ((sum(game["3pt_attempts"] for game in games) - all_3pt)) + (sum(game["2pt_attempts"] for game in games) - all_2pt)
+        all_missed = (sum(game["3pt_attempts"] for game in games) - all_3pt) + (sum(game["2pt_attempts"] for game in games) - all_2pt)
         all_turnovers = sum(game["turnovers"] for game in games)
         all_missed_free_throws = sum(game["missedFT"] for game in games)
         all_games = len(games)
@@ -46,7 +46,6 @@ def stats_review():
         all_goals = sum(game["goals"] for game in games)
         all_assists = sum(game["assists"] for game in games)
         all_shots = sum(game["shots"] for game in games)
-        all_shots_on_target = sum(game["shots"] for game in games)
         all_yellow_cards = sum(game["yellow_cards"] for game in games)
         all_red_cards = sum(game["red_cards"] for game in games)
         all_games = len(games)
@@ -57,8 +56,7 @@ def stats_review():
         
         table = [["Minutes", all_minutes, None], ["Goals", all_goals, round(all_goals / all_games, 2)],
                 ["Assists", all_assists, round(all_assists / all_games, 2)], ["Shots", all_shots, round(all_shots / all_games, 2)],
-                ["Shots on target", all_shots_on_target, round(all_shots_on_target / all_games, 2)], ["Yellow Cards", all_yellow_cards, round(all_yellow_cards / all_games, 2)],
-                ["Red Cards", all_red_cards, round(all_red_cards / all_games, 2)]
+                ["Yellow Cards", all_yellow_cards, round(all_yellow_cards / all_games, 2)], ["Red Cards", all_red_cards, round(all_red_cards / all_games, 2)]
                 ]
         
         print(f"{f'{texts["stat"]}':<20} {f'{texts["all_time"]}':<10} {f'{texts["per_game"]}'}")
@@ -75,15 +73,15 @@ def calculate_efficiency(points, rebounds, assists, steals, blocks, missed, miss
     return efficiency
 
 
-def show_stats(matchIndex):
+def show_stats(match_index):
     if sport == 1:
-        table = [["Points", str(games[matchIndex]["points"])], ["Minutes", str(games[matchIndex]["minutes"])],
-                ["2 Pointers", (f'{str(games[matchIndex]["2ptshots_made"])}/{str(games[matchIndex]["2pt_attempts"])}')], ["3 Pointers", (f'{str(games[matchIndex]["3ptshots_made"])}/{str(games[matchIndex]["3pt_attempts"])}')],
-                ["Assists", str(games[matchIndex]["assists"])], ["Rebounds", str(games[matchIndex]["rebounds"])],
-                ["Blocks", str(games[matchIndex]["blocks"])], ["Steals", str(games[matchIndex]["steals"])],
-                ["Personal fouls", str(games[matchIndex]["personal_fouls"])], ["Missed Free Throws", str(games[matchIndex]["missedFT"])],
-                ["Turnovers", str(games[matchIndex]["turnovers"])], ["Won", str(games[matchIndex]["Won"])]
-                ]
+        table = [["Points", str(games[match_index]["points"])], ["Minutes", str(games[match_index]["minutes"])],
+                 ["2 Pointers", f'{str(games[match_index]["2pt_shots_made"])}/{str(games[match_index]["2pt_attempts"])}'], ["3 Pointers", f'{str(games[match_index]["3pt_shots_made"])}/{str(games[match_index]["3pt_attempts"])}'],
+                 ["Assists", str(games[match_index]["assists"])], ["Rebounds", str(games[match_index]["rebounds"])],
+                 ["Blocks", str(games[match_index]["blocks"])], ["Steals", str(games[match_index]["steals"])],
+                 ["Personal fouls", str(games[match_index]["personal_fouls"])], ["Missed Free Throws", str(games[match_index]["missedFT"])],
+                 ["Turnovers", str(games[match_index]["turnovers"])], ["Won", str(games[match_index]["Won"])]
+                 ]
         print(f"{f'{texts["stat"]}':<20} {f'{texts["value"]}'}")
         print("─" * 35)
         for stat, value in table:
@@ -91,11 +89,11 @@ def show_stats(matchIndex):
         print("─" * 35)
 
     if sport == 2:
-        table = [["Minutes", str(games[matchIndex]["minutes"])], ["Goals", str(games[matchIndex]["goals"])],
-                ["Assists", str(games[matchIndex]["assists"])], ["Shots", str(games[matchIndex]["shots"])],
-                ["Shots on target", str(games[matchIndex]["shots_on_target"])], ["Yellow Cards", str(games[matchIndex]["yellow_cards"])],
-                ["Red Cards", str(games[matchIndex]["red_cards"])], ["Won", str(games[matchIndex]["Won"])]
-                ]
+        table = [["Minutes", str(games[match_index]["minutes"])], ["Goals", str(games[match_index]["goals"])],
+                 ["Assists", str(games[match_index]["assists"])], ["Shots", str(games[match_index]["shots"])],
+                 ["Yellow Cards", str(games[match_index]["yellow_cards"])], ["Red Cards", str(games[match_index]["red_cards"])],
+                 ["Won", str(games[match_index]["Won"])]
+                 ]
         print(f"{f'{texts["stat"]}':<20} {f'{texts["value"]}'}")
         print("─" * 35)
         for stat, value in table:

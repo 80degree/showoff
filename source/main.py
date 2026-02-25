@@ -8,10 +8,12 @@ try:
     import export_handler
 except FileNotFoundError:
     print('Some files were not found. The program will not run, try to redownload the program or open an issue, if reinstalling didnt help')
-    input(f'{ui_handler.texts["enter_to_continue"]}')
+    input('Enter to continue...')
+    sys.exit()
 except ModuleNotFoundError as e:
-    print(f'Some modules were not installed on your computer.\n Error:{e}')
-    input(f'{ui_handler.texts["enter_to_continue"]}')
+    print(f'Some modules are not installed on your computer.\n Error:{e}')
+    input('Enter to continue...')
+    sys.exit()
 
 db = data_handler
 ui = ui_handler
@@ -24,6 +26,10 @@ if db.sport == 1:
     sport = 'basketball'
 elif db.sport == 2:
     sport = 'soccer'
+#elif db.sport == 3:
+#    sport = 'volleyball'
+#elid db.sport == 4:
+#    sport = 'football'
 
 def main():
     while True:

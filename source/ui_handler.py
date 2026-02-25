@@ -47,7 +47,7 @@ class Menu:
 
     @staticmethod
     def show_info(full):
-        if full == False:
+        if not full:
             print(INFO)
         else:
             print(INFO, DESCRIPTION)

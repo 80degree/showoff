@@ -56,13 +56,12 @@ You can run showoff using [binaries for your system](https://github.com/worthywo
    ```bash
    git clone https://github.com/worthyworm/showoff.git
    cd showoff
-   cd source
    ```
 
 2. Run:
 
    ```bash
-   python main.py
+   python3 source/main.py
    ```
 
 ---

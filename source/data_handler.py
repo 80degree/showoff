@@ -1,24 +1,30 @@
 import json
+import sys
 from ui_handler import texts
 
 try:
-    sport = int(input(f'''
+    while True:
+        sport = int(input(f'''
 {texts["select_sport"]}:
 [1] - {texts["basketball"]}
 [2] - {texts["soccer"]}
 '''))
-except IndexError:
-    print('Out of range')
-    input(f'{texts["enter_to_continue"]}')
+        if sport > 2 or sport < 0:
+            print("Invalid option")
+        else:
+            break
 except ValueError:
     print('Invalid input')
     input(f'{texts["enter_to_continue"]}')
+    sys.exit(1)
 except Exception as e:
     print(f'ERROR: {e}')
     input(f'{texts["enter_to_continue"]}')
+    sys.exit(1)
 
 positions_basketball = ['PG', 'SG', 'SF', 'PF', 'C']
 positions_soccer = ['GK', 'SW', 'LB', 'CB', 'RB', 'LWB', 'RWB', 'DM', 'LM', 'CM', 'RM', 'AM', 'LW', 'SS', 'RW', 'LF', 'CF', 'RF']
+#positions_voleyball = ['OH', 'OPP', 'MB', 'S', 'L', 'DS', 'SS']
 
 if sport == 1:
     try:
@@ -30,6 +36,7 @@ if sport == 1:
     except Exception as e:
         print(f'ERROR: {e}')
         input(f'{texts["enter_to_continue"]}')
+        sys.exit(1)
 
 elif sport == 2:
     try:
@@ -41,6 +48,7 @@ elif sport == 2:
     except Exception as e:
         print(f'ERROR: {e}')
         input(f'{texts["enter_to_continue"]}')
+        sys.exit(1)
 
 
 def add_match():
@@ -56,12 +64,12 @@ def add_match():
                     "assists": int(input(f"{texts["game_assists"]}: ")),
                     "2pt_attempts": int(input(f'{texts["game_2pta"]}: ')),
                     "3pt_attempts": int(input(f'{texts["game_3pta"]}: ')),
-                    "2ptshots_made": int(input(f'{texts["game_2ptm"]}: ')),
-                    "3ptshots_made": int(input(f'{texts["game_3ptm"]}: ')),
+                    "2pts_hots_made": int(input(f'{texts["game_2ptm"]}: ')),
+                    "3pt_shots_made": int(input(f'{texts["game_3ptm"]}: ')),
                     "rebounds": int(input(f"{texts["game_rebounds"]}: ")),
                     "blocks": int(input(f"{texts["game_blocks"]}: ")),
                     "steals": int(input(f"{texts["game_steals"]}: ")),
-                    "personal_fouls": int(input(f"{texts["game_personalfouls"]}: ")),
+                    "personal_fouls": int(input(f"{texts["game_personal_fouls"]}: ")),
                     "missedFT": int(input(f"{texts["game_missedFT"]}: ")),
                     "turnovers": int(input(f"{texts["game_turnovers"]}: ")),
                     "Won": input(f"{texts["game_result"]}: ")
@@ -70,13 +78,15 @@ def add_match():
             except ValueError:
                 print('Invalid input')
                 input(f'{texts["enter_to_continue"]}')
+                sys.exit(1)
             except IndexError:
                 print('Out of range')
                 input(f'{texts["enter_to_continue"]}')
-            
+                sys.exit(1)
             except Exception as e:
                 print(f'ERROR: {e}')
                 input(f'{texts["enter_to_continue"]}')
+                sys.exit(1)
     
     elif sport == 2:
         while True:
@@ -89,20 +99,20 @@ def add_match():
                     "goals": int(input(f'{texts["game_goals"]}: ')),
                     "assists": int(input(f'{texts["game_assists"]}: ')),
                     "shots": int(input(f'{texts["game_shots"]}: ')),
-                    "yellow_cards": int(input(f"{texts["game_yellowcards"]}: ")),
-                    "red_cards": int(input(f'{texts["game_redcards"]}: ')),
-                    "fouls": int(input(f'{texts["game_personalfouls"]}: ')),
+                    "yellow_cards": int(input(f"{texts["game_yellow_cards"]}: ")),
+                    "red_cards": int(input(f'{texts["game_red_cards"]}: ')),
+                    "fouls": int(input(f'{texts["game_personal_fouls"]}: ')),
                     "Won": input(f"{texts["game_result"]}: ")
                 }
                 break
             except ValueError:
                 print('Invalid input')
                 input(f'{texts["enter_to_continue"]}')
-            
+                sys.exit()
             except Exception as e:
                 print(f'ERROR: {e}')
                 input(f'{texts["enter_to_continue"]}')
-            
+                sys.exit(1)
     
     db["games"].append(new_game)
 
