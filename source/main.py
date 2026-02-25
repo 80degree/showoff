@@ -39,11 +39,11 @@ def main():
             Menu.clear_screen()
 
         elif user_choice == 2:
-            gamescount = len(games)
-            for i in range(gamescount):
+            games_count = len(games)
+            for i in range(games_count):
                 print(f"{i + 1} - {str(games[i]['name'])}")
             choice = input(f"{texts["game_to_show"]}\n")
-            if choice != '' and int(choice) - 1 in range(gamescount):
+            if choice != '' and int(choice) - 1 in range(games_count):
                 stats.show_stats(int(choice) - 1)
             else:
                 print(f"{texts["game_index_out"]}.")

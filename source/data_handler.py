@@ -17,7 +17,8 @@ except Exception as e:
     print(f'ERROR: {e}')
     input(f'{texts["enter_to_continue"]}')
 
-positions = ['PG', 'SG', 'SF', 'PF', 'C']
+positions_basketball = ['PG', 'SG', 'SF', 'PF', 'C']
+positions_soccer = ['GK', 'SW', 'LB', 'CB', 'RB', 'LWB', 'RWB', 'DM', 'LM', 'CM', 'RM', 'AM', 'LW', 'SS', 'RW', 'LF', 'CF', 'RF']
 
 if sport == 1:
     try:
@@ -49,7 +50,7 @@ def add_match():
                 new_game = {
                     "name": input(f"{texts["game_name"]}: "),
                     "date": input(f"{texts["game_date"]}: "),
-                    "position": positions[int(input(f'{texts["game_position"]}')) - 1],
+                    "position": positions_basketball[int(input(f'{texts["game_position"]}')) - 1],
                     "minutes": int(input(f'{texts["game_minutes"]}: ')),
                     "points": int(input(f"{texts["game_points"]}: ")),
                     "assists": int(input(f"{texts["game_assists"]}: ")),
@@ -83,7 +84,7 @@ def add_match():
                 new_game = {
                     "name": input(f"{texts["game_name"]}: "),
                     "date": input(f"{texts["game_date"]}: "),
-                    "position": input(f'{texts["game_position"]}: '),
+                    "position": positions_soccer[int(input(f'{texts["game_position"]}: ')) - 1],
                     "minutes": int(input(f'{texts["game_minutes"]}: ')),
                     "goals": int(input(f'{texts["game_goals"]}: ')),
                     "assists": int(input(f'{texts["game_assists"]}: ')),
