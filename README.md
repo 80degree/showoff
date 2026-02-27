@@ -23,11 +23,11 @@ You can run showoff using [binaries for your system](https://github.com/worthywo
 
 ### Binaries status
 
-| Platform | Status | Latest |
-| ---------- | -------- | ------- |
-| Windows | Partial-support(Has issues) | v1.1.1 |
-| Linux | Ready ✅ | v1.1.1 |
-| macOS | Could be later ⚠️ | No builds uploaded |
+| Platform | Status                      | Latest             |
+|----------|-----------------------------|--------------------|
+| Windows  | Partial-support(Has issues) | v1.1.1             |
+| Linux    | Ready ✅                     | v1.1.1             |
+| macOS    | Could be later ⚠️           | No builds uploaded |
 
 1. Download the latest binary files for your system:
    - [Latest Release](https://github.com/worthyworm/showoff/releases/latest)
@@ -49,7 +49,7 @@ You can run showoff using [binaries for your system](https://github.com/worthywo
 
 ### Using the source code
 
-> Note:  Using the source code is NOT reccomended. The code is being worked on and some features may be unfinished
+> Note:  Using the source code is NOT recommended. The code is being worked on and some features may be unfinished
 
 1. Clone the repository:
 

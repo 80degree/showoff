@@ -1,3 +1,4 @@
+# data_handler is responsible for the operations with db and json's
 import json
 import sys
 from ui_handler import texts
@@ -9,7 +10,7 @@ try:
 [1] - {texts["basketball"]}
 [2] - {texts["soccer"]}
 '''))
-        if sport > 2 or sport < 0:
+        if sport > 2 or sport < 1:
             print("Invalid option")
         else:
             break

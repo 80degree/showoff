@@ -1,3 +1,4 @@
+# statistics_handler is responsible for displaying stats
 import data_handler
 from ui_handler import texts
 

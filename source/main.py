@@ -1,19 +1,19 @@
+import os
+import sys
 try:
     import data_handler
     import ui_handler
-    import os
-    import sys
     from ui_handler import Menu
     import statistics_handler
     import export_handler
-except FileNotFoundError:
-    print('Some files were not found. The program will not run, try to redownload the program or open an issue, if reinstalling didnt help')
+except FileNotFoundError as e:
+    print(f'Some files were not found. The program will not run, try to redownload the program or open an issue, if reinstalling didnt help\nERROR: {e}')
     input('Enter to continue...')
-    sys.exit()
+    sys.exit(1)
 except ModuleNotFoundError as e:
-    print(f'Some modules are not installed on your computer.\n Error:{e}')
+    print(f'Some modules are not installed on your computer.\nERROR:{e}')
     input('Enter to continue...')
-    sys.exit()
+    sys.exit(1)
 
 db = data_handler
 ui = ui_handler
