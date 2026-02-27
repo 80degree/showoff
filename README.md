@@ -1,8 +1,9 @@
 # Showoff - A simple sports stats tracker
 
 ![Version](https://img.shields.io/badge/version-1.1.1-blue)
-![Python](https://img.shields.io/badge/python-3.11+-green)
+![Python](https://img.shields.io/badge/python-3.9+-green)
 ![License](https://img.shields.io/badge/license-MIT-orange)
+![made with love](https://img.shields.io/badge/made%20with-%3C3-red)
 
 Showoff is a simple sports self-statistics tracker for players or their coaches, written to be easy to use and to be informational.
 Currently supports basketball, soccer.
