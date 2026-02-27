@@ -34,6 +34,10 @@ if sport == 1:
     except FileNotFoundError:
         player = input(f"{texts["enter_name"]}: ")
         db = {"player": player, "games": []}
+    except json.decoder.JSONDecodeError as e:
+        print(f"The file is not a valid Json file or is empty\nERROR: {e}")
+        input(f'{texts["enter_to_continue"]}')
+        sys.exit(1)
     except Exception as e:
         print(f'ERROR: {e}')
         input(f'{texts["enter_to_continue"]}')
@@ -65,15 +69,15 @@ def add_match():
                     "assists": int(input(f"{texts["game_assists"]}: ")),
                     "2pt_attempts": int(input(f'{texts["game_2pta"]}: ')),
                     "3pt_attempts": int(input(f'{texts["game_3pta"]}: ')),
-                    "2pts_hots_made": int(input(f'{texts["game_2ptm"]}: ')),
+                    "2pt_shots_made": int(input(f'{texts["game_2ptm"]}: ')),
                     "3pt_shots_made": int(input(f'{texts["game_3ptm"]}: ')),
                     "rebounds": int(input(f"{texts["game_rebounds"]}: ")),
                     "blocks": int(input(f"{texts["game_blocks"]}: ")),
                     "steals": int(input(f"{texts["game_steals"]}: ")),
                     "personal_fouls": int(input(f"{texts["game_personal_fouls"]}: ")),
-                    "missedFT": int(input(f"{texts["game_missedFT"]}: ")),
+                    "missed_free_throws": int(input(f"{texts["game_missed_free_throws"]}: ")),
                     "turnovers": int(input(f"{texts["game_turnovers"]}: ")),
-                    "Won": input(f"{texts["game_result"]}: ")
+                    "won": input(f"{texts["game_result"]}: ")
                 }
                 break
             except ValueError:

@@ -18,7 +18,7 @@
     "game_blocks": "Введите блоки",
     "game_steals": "Введите перехваты",
     "game_personal_fouls": "Введите фолы",
-    "game_missedFT": "Введите промазанные штрафные",
+    "game_missed_free_throws": "Введите промазанные штрафные",
     "game_turnovers": "Введите потери",
     "game_result": "Введите результат(W - победа/L - проигрыш)",
     "game_goals": "Введите голы",

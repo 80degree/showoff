@@ -69,8 +69,8 @@ def stats_review():
         print("─" * 40)
 
 
-def calculate_efficiency(points, rebounds, assists, steals, blocks, missed, missedFT, turnovers):
-    efficiency = (points + rebounds + assists + steals + blocks) - (missed + missedFT + turnovers)
+def calculate_efficiency(points, rebounds, assists, steals, blocks, missed, missed_free_throw, turnovers):
+    efficiency = (points + rebounds + assists + steals + blocks) - (missed + missed_free_throw + turnovers)
     return efficiency
 
 
