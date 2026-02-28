@@ -43,9 +43,9 @@ def export_to_csv(sport, filename=f'export_{now.strftime("%d%m%Y_%H%M%S")}.csv')
             'BLK': 'blocks',
             'STL': 'steals',
             'PF': 'personal_fouls',
-            'Missed Free Throws': 'missedFT',
+            'Missed Free Throws': 'missed_free_throws',
             'Turnovers': 'turnovers',
-            'Result': 'Won'
+            'Result': 'result'
         }
 
         with open(filename, 'w', newline='', encoding='utf-8') as csvf:
@@ -73,7 +73,7 @@ def export_to_csv(sport, filename=f'export_{now.strftime("%d%m%Y_%H%M%S")}.csv')
             print(f'{texts["no_games"]}')
             return
 
-        headers = ['Date', 'POS', 'MIN', 'GOALS', 'AST', 'SHOTS', 'Yellow cards', 'Red cards', 'Fouls', 'Result']
+        headers = ['Date', 'POS', 'MIN', 'GOALS', 'AST', 'SHOTS', 'SAVES', 'STEALS', 'Yellow cards', 'Red cards', 'Fouls', 'Result']
 
         key_mapping = {
             'Date': 'date',
@@ -82,10 +82,12 @@ def export_to_csv(sport, filename=f'export_{now.strftime("%d%m%Y_%H%M%S")}.csv')
             'GOALS': 'goals',
             'AST': 'assists',
             'SHOTS': 'shots',
+            'SAVES': 'saves',
+            'STEALS': 'steals',
             'Yellow cards': 'yellow_cards',
             'Red cards': 'red_cards',
             'Fouls': 'fouls',
-            'Result': 'Won'
+            'Result': 'result'
         }
 
         with open(filename, 'w', newline='', encoding='utf-8') as csvf:

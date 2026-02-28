@@ -84,7 +84,7 @@ def show_stats(match_index):
                  ["Assists", str(games[match_index]["assists"])], ["Rebounds", str(games[match_index]["rebounds"])],
                  ["Blocks", str(games[match_index]["blocks"])], ["Steals", str(games[match_index]["steals"])],
                  ["Personal fouls", str(games[match_index]["personal_fouls"])], ["Missed Free Throws", str(games[match_index]["missed_free_throws"])],
-                 ["Turnovers", str(games[match_index]["turnovers"])], ["Won", str(games[match_index]["result"])]
+                 ["Turnovers", str(games[match_index]["turnovers"])], ["Result", str(games[match_index]["result"])]
                  ]
         print(f"{f'{texts["stat"]}':<20} {f'{texts["value"]}'}")
         print("─" * 35)
@@ -97,7 +97,7 @@ def show_stats(match_index):
                  ["Assists", str(games[match_index]["assists"])], ["Shots", str(games[match_index]["shots"])],
                  ["Saves", str(games[match_index]["saves"])], ["Steals", str(games[match_index]["steals"])],
                  ["Yellow Cards", str(games[match_index]["yellow_cards"])], ["Red Cards", str(games[match_index]["red_cards"])],
-                 ["Won", str(games[match_index]["result"])]
+                 ["Result", str(games[match_index]["result"])]
                  ]
         print(f"{f'{texts["stat"]}':<20} {f'{texts["value"]}'}")
         print("─" * 35)
