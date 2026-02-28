@@ -4,21 +4,26 @@ import sys
 
 from __init__ import INFO
 
-try:
-    lang = int(input("[1] - English\n[2] - Русский\n>>>"))
-    if lang == 1:
-        lang = 'en'
-    elif lang == 2:
-        lang = 'ru'
-    else:
-        print("Out of range.")
-        os.execv(sys.executable, ['python'] + sys.argv)
-except ValueError:
-    print('Invalid choice')
-    os.execv(sys.executable, ['python'] + sys.argv)
-except Exception as e:
-    print(f'ERROR: {e}')
-    os.execv(sys.executable, ['python'] + sys.argv)
+while True:
+    try:
+        lang = int(input("[1] - English\n[2] - Русский\n>>>"))
+        if lang == 1:
+            lang = 'en'
+            break
+        elif lang == 2:
+            lang = 'ru'
+            break
+        else:
+            print("Out of range.")
+
+    except ValueError:
+        print('Invalid choice')
+
+    except Exception as e:
+        print(f'ERROR: {e}')
+        input('Press Enter to exit...')
+        sys.exit(1)
+
 
 with open(f'locales/lang_{lang}.json', 'r', encoding='utf-8') as f:
     texts = json.load(f)

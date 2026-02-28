@@ -48,11 +48,22 @@ def main():
             games_count = len(games)
             for i in range(games_count):
                 print(f"{i + 1} - {str(games[i]['name'])}")
-            choice = input(f"{texts["game_to_show"]}\n")
-            if choice != '' and int(choice) - 1 in range(games_count):
-                stats.show_stats(int(choice) - 1)
-            else:
-                print(f"{texts["game_index_out"]}.")
+            while True:
+                try:
+                    choice = input(f"{texts["game_to_show"]}\n")
+                    if choice != '' and int(choice) - 1 in range(games_count):
+                        stats.show_stats(int(choice) - 1)
+                        break
+                    else:
+                        print(f"{texts["game_index_out"]}.")
+                        break
+
+                except ValueError:
+                    print("Invalid input.")
+
+                except Exception as e:
+                    print(f'ERROR: {e}')
+
             input(f"{texts["enter_to_continue"]}... ")
             Menu.clear_screen()
 

@@ -3,25 +3,25 @@ import json
 import sys
 from ui_handler import texts
 
-try:
-    while True:
+while True:
+    try:
         sport = int(input(f'''
 {texts["select_sport"]}:
 [1] - {texts["basketball"]}
 [2] - {texts["soccer"]}
-'''))
+>>>'''))
         if sport > 2 or sport < 1:
             print("Invalid option")
         else:
             break
-except ValueError:
-    print('Invalid input')
-    input(f'{texts["enter_to_continue"]}')
-    sys.exit(1)
-except Exception as e:
-    print(f'ERROR: {e}')
-    input(f'{texts["enter_to_continue"]}')
-    sys.exit(1)
+    except ValueError:
+        print('Invalid input')
+        input(f'{texts["enter_to_continue"]}')
+
+    except Exception as e:
+        print(f'ERROR: {e}')
+        input(f'Press enter to exit...')
+        sys.exit(1)
 
 positions_basketball = ['PG', 'SG', 'SF', 'PF', 'C']
 positions_soccer = ['GK', 'SW', 'LB', 'CB', 'RB', 'LWB', 'RWB', 'DM', 'LM', 'CM', 'RM', 'AM', 'LW', 'SS', 'RW', 'LF', 'CF', 'RF']
@@ -63,7 +63,7 @@ def add_match():
                 new_game = {
                     "name": input(f"{texts["game_name"]}: "),
                     "date": input(f"{texts["game_date"]}: "),
-                    "position": positions_basketball[int(input(f'{texts["game_position"]}')) - 1],
+                    "position": positions_basketball[int(input(f'{texts["game_basketball_position"]}\n>>> ').strip()) - 1],
                     "minutes": int(input(f'{texts["game_minutes"]}: ')),
                     "points": int(input(f"{texts["game_points"]}: ")),
                     "assists": int(input(f"{texts["game_assists"]}: ")),
@@ -77,17 +77,17 @@ def add_match():
                     "personal_fouls": int(input(f"{texts["game_personal_fouls"]}: ")),
                     "missed_free_throws": int(input(f"{texts["game_missed_free_throws"]}: ")),
                     "turnovers": int(input(f"{texts["game_turnovers"]}: ")),
-                    "won": input(f"{texts["game_result"]}: ")
+                    "result": input(f"{texts["game_result"]}: ")
                 }
                 break
             except ValueError:
-                print('Invalid input')
+                print(f'Invalid input')
                 input(f'{texts["enter_to_continue"]}')
-                sys.exit(1)
+
             except IndexError:
                 print('Out of range')
                 input(f'{texts["enter_to_continue"]}')
-                sys.exit(1)
+
             except Exception as e:
                 print(f'ERROR: {e}')
                 input(f'{texts["enter_to_continue"]}')
@@ -99,21 +99,23 @@ def add_match():
                 new_game = {
                     "name": input(f"{texts["game_name"]}: "),
                     "date": input(f"{texts["game_date"]}: "),
-                    "position": positions_soccer[int(input(f'{texts["game_position"]}: ')) - 1],
+                    "position": positions_soccer[int(input(f'{texts["game_soccer_position"]}\n>>> ').strip()) - 1],
                     "minutes": int(input(f'{texts["game_minutes"]}: ')),
                     "goals": int(input(f'{texts["game_goals"]}: ')),
                     "assists": int(input(f'{texts["game_assists"]}: ')),
+                    "saves": int(input(f'{texts["game_saves"]}: ')),
+                    "steals": int(input(f'{texts["game_steals"]}: ')),
                     "shots": int(input(f'{texts["game_shots"]}: ')),
                     "yellow_cards": int(input(f"{texts["game_yellow_cards"]}: ")),
                     "red_cards": int(input(f'{texts["game_red_cards"]}: ')),
                     "fouls": int(input(f'{texts["game_personal_fouls"]}: ')),
-                    "Won": input(f"{texts["game_result"]}: ")
+                    "result": input(f"{texts["game_result"]}: ")
                 }
                 break
             except ValueError:
                 print('Invalid input')
                 input(f'{texts["enter_to_continue"]}')
-                sys.exit()
+
             except Exception as e:
                 print(f'ERROR: {e}')
                 input(f'{texts["enter_to_continue"]}')
@@ -127,25 +129,19 @@ def save():
         try:
             with open('basketball.json', 'w', encoding='utf-8') as f:
                 json.dump(db, f, ensure_ascii=False, indent=4)
-                return
         except FileNotFoundError:
             print('File basketball.json does not exist.')
             input(f'{texts["enter_to_continue"]}')
-            return
         except Exception as e:
             print(f'ERROR: {e}')
             input(f'{texts["enter_to_continue"]}')
-            return
     if sport == 2:
         try:
             with open('soccer.json', 'w', encoding='utf-8') as f:
                 json.dump(db, f, ensure_ascii=False, indent=4)
-                return
         except FileNotFoundError:
             print('File soccer.json does not exist.')
             input(f'{texts["enter_to_continue"]}')
-            return
         except Exception as e:
             print(f'ERROR: {e}')
             input(f'{texts["enter_to_continue"]}')
-            return
