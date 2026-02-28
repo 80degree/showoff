@@ -39,7 +39,7 @@ You can run showoff using [binaries for your system](https://github.com/worthywo
 2. Unpack the binary in a convenient folder.
 
 3. Launch:
-   > Note for windows users:
+   > Note for Windows users:
    >
    > Windows defender may detect showoff as a malware, so it is recommended to disable defender / add showoff to exceptions
     - **Windows**: Double-click 'showoff.exe'

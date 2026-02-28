@@ -33,7 +33,7 @@ if sport == 1:
         with open('basketball.json', 'r', encoding='utf-8') as f:
             db = json.load(f)
             if tuple(map(int, db['version'].split('.'))) < (1, 1, 2):
-                print('Unsupported version')
+                print(f'{texts["unsupported_version"]}: {db["version"]}version')
                 input('Enter to continue')
                 sys.exit(1)
     except FileNotFoundError:
@@ -53,7 +53,7 @@ elif sport == 2:
         with open('soccer.json', 'r', encoding='utf-8') as f:
             db = json.load(f)
             if tuple(map(int, db['version'].split('.'))) < (1, 1, 2):
-                print('Unsupported version')
+                print(f'{texts["unsupported_version"]}: {db["version"]}')
                 input('Enter to continue')
                 sys.exit(1)
     except FileNotFoundError:
