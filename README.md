@@ -29,7 +29,7 @@ You can run showoff using [binaries for your system](https://github.com/worthywo
 
 | Platform | Status                      | Latest             |
 |----------|-----------------------------|--------------------|
-| Windows  | Partial-support(Has issues) | v1.1.2             |
+| Windows  | Ready ✅                    | v1.1.2             |
 | Linux    | Ready ✅                    | v1.1.2             |
 | macOS    | Ready ✅                    | v1.1.2             |
 
