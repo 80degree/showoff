@@ -1,11 +1,11 @@
 # Showoff - A simple sports stats tracker
 
-![Version](https://img.shields.io/badge/version-1.1.2-blue)
+![Version](https://img.shields.io/badge/version-2.0.0-blue)
 ![Python](https://img.shields.io/badge/python-3.9+-green)
 ![License](https://img.shields.io/badge/license-MIT-orange)
 ![made with love](https://img.shields.io/badge/made%20with-%3C3-red)
 
-> **Versions below v1.1.2 are not-supported**
+> **Versions below v2.0.0 are temporarily not-supported. Stay tuned for updates!**
 
 Showoff is a simple sports self-statistics tracker for players or their coaches, written to be easy to use and to be informational.
 Currently supports basketball, soccer.
@@ -29,9 +29,9 @@ You can run showoff using [binaries for your system](https://github.com/worthywo
 
 | Platform | Status                      | Latest             |
 |----------|-----------------------------|--------------------|
-| Windows  | Ready ✅                    | v1.1.2             |
-| Linux    | Ready ✅                    | v1.1.2             |
-| macOS    | Ready ✅                    | v1.1.2             |
+| Windows  | Ready ✅                    | v2.0.0             |
+| Linux    | Ready ✅                    | v2.0.0             |
+| macOS    | Ready ✅                    | v2.0.0             |
 
 1. Download the latest binary files for your system:
    - [Latest Release](https://github.com/worthyworm/showoff/releases/latest)
