@@ -34,11 +34,15 @@ MENU = f"""
 [2] - {texts["view_games"]}
 [3] - {texts["stats_review"]}
 [4] - {texts["data_export"]}
-[5] - {texts["change_sport"]}
+[5] - {texts["settings"]}
 [6] - {texts["about"]}
-[7] - {texts["change_lang"]}
-[8] - {texts["exit"]}
+[7] - {texts["exit"]}
+"""
 
+SETTINGS_MENU = f"""
+[1] - {texts["change_lang"]}
+[2] - {texts["change_sport"]}
+[3] - {texts["back"]}
 """
 
 DESCRIPTION = f"{texts["description"]}\nhttps://github.com/worthyworm/showoff"
@@ -81,3 +85,15 @@ class Menu:
     @staticmethod
     def clear_screen():
         os.system('cls' if os.name == 'nt' else 'clear')
+
+    @staticmethod
+    def settings_menu():
+        try:
+            print(SETTINGS_MENU)
+            choice = int(input(f"{texts["select"]} >> "))
+            return choice
+        except ValueError:
+            choice = ValueError
+            return choice
+        except Exception as e:
+            print(f'ERROR: {e}')

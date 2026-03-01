@@ -40,7 +40,7 @@ def main():
         if user_choice == ValueError:
             Menu.clear_screen()
             pass
-        if user_choice == 1:
+        elif user_choice == 1:
             db.add_match()
             print(f"{texts["added"]}")
             db.save()
@@ -80,9 +80,20 @@ def main():
             Menu.clear_screen()
 
         elif user_choice == 5:
-            db.change_sport(preferences)
-            db.save()
-            os.execl(sys.executable, sys.executable, *sys.argv)
+            print(f'{texts["settings"]}:')
+            choice = Menu.settings_menu()
+            if choice == 1:
+                ui_handler.change_lang(preferences)
+                db.save()
+                os.execl(sys.executable, sys.executable, *sys.argv)
+            elif choice == 2:
+                db.change_sport(preferences)
+                db.save()
+                os.execl(sys.executable, sys.executable, *sys.argv)
+            elif choice == 3:
+                pass
+            elif choice == ValueError:
+                pass
 
         elif user_choice == 6:
             Menu.clear_screen()
@@ -91,11 +102,6 @@ def main():
             Menu.clear_screen()
 
         elif user_choice == 7:
-            ui_handler.change_lang(preferences)
-            db.save()
-            os.execl(sys.executable, sys.executable,  *sys.argv)
-
-        elif user_choice == 8:
             break
 
 
