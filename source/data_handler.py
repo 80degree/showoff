@@ -4,15 +4,35 @@ import sys
 from ui_handler import texts
 from __init__ import VERSION
 
+sport = 0
+
+try:
+    with open('preferences.json', 'r', encoding='utf-8') as f:
+        preferences = json.load(f)
+        if preferences['sport'] == 1:
+            sport = 1
+        elif preferences['sport'] == 2:
+            sport = 2
+        else:
+            pass
+except KeyError:
+    pass
+
 while True:
     try:
-        sport = int(input(f'''
+        if sport != 1 and sport != 2:
+            sport = int(input(f'''
 {texts["select_sport"]}:
 [1] - {texts["basketball"]}
 [2] - {texts["soccer"]}
 >>>'''))
-        if sport > 2 or sport < 1:
-            print("Invalid option")
+            if sport > 2 or sport < 1:
+                print("Invalid option")
+            else:
+                with open('preferences.json', 'w', encoding='utf-8') as f:
+                    preferences['sport'] = sport
+                    json.dump(preferences, f, ensure_ascii=False, indent=4)
+                break
         else:
             break
     except ValueError:
@@ -64,6 +84,17 @@ elif sport == 2:
         input(f'{texts["enter_to_continue"]}')
         sys.exit(1)
 
+
+def change_sport(preferences):
+    with open('preferences.json', 'w', encoding='utf-8') as f:
+        if preferences['sport'] == 1:
+            preferences['sport'] = 2
+            json.dump(preferences, f, ensure_ascii=False, indent=4)
+            print(f'{texts["changed_sport"]} {texts["soccer"]}')
+        else:
+            preferences['sport'] = 1
+            json.dump(preferences, f, ensure_ascii=False, indent=4)
+            print(f'{texts["changed_sport"]} {texts["basketball"]}')
 
 def add_match():
     if sport == 1:

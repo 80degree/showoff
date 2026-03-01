@@ -43,13 +43,33 @@ MENU = f"""
 
 DESCRIPTION = f"{texts["description"]}\nhttps://github.com/worthyworm/showoff"
 
+def change_lang(preferences):
+    if lang == 'en':
+        with open('preferences.json', 'w', encoding='utf-8') as f:
+            preferences['lang'] = 'ru'
+            json.dump(preferences, f, ensure_ascii=False, indent=4)
+        print("Язык изменен на русский.")
+        input("Enter чтобы продолжить...")
+    elif lang == 'ru':
+        with open('preferences.json', 'w', encoding='utf-8') as f:
+            preferences['lang'] = 'en'
+            json.dump(preferences, f, ensure_ascii=False, indent=4)
+        print("Language set to English.")
+        input("Enter to continue...")
+
 class Menu:
 
     @staticmethod
     def create_menu():
         print(MENU)
-        choice = int(input(f"{texts["select"]} >> "))
-        return choice
+        try:
+            choice = int(input(f"{texts["select"]} >> "))
+            return choice
+        except ValueError:
+            choice = ValueError
+            return choice
+        except Exception as e:
+            print(f'ERROR: {e}')
 
     @staticmethod
     def show_info(full):

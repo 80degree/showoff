@@ -51,5 +51,6 @@
     "per_game": "PER-GAME",
     "value": "VALUE",
     "change_lang": "Change language",
-    "unsupported_version": "Unsupported save version\nFor more information, see the readme"
+    "unsupported_version": "Unsupported save version\nFor more information, see the readme",
+    "changed_sport": "Sport changed to"
 }

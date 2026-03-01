@@ -21,6 +21,7 @@ stats = statistics_handler
 games = data_handler.db["games"]
 export = export_handler
 texts = ui.texts
+preferences = data_handler.preferences
 
 if db.sport == 1:
     sport = 'basketball'
@@ -36,7 +37,9 @@ def main():
         Menu.show_info(False)
         print(f"{texts["currently_in"]} {sport}")
         user_choice = Menu.create_menu()
-
+        if user_choice == ValueError:
+            Menu.clear_screen()
+            pass
         if user_choice == 1:
             db.add_match()
             print(f"{texts["added"]}")
@@ -77,6 +80,8 @@ def main():
             Menu.clear_screen()
 
         elif user_choice == 5:
+            db.change_sport(preferences)
+            db.save()
             os.execl(sys.executable, sys.executable, *sys.argv)
 
         elif user_choice == 6:
@@ -86,6 +91,8 @@ def main():
             Menu.clear_screen()
 
         elif user_choice == 7:
+            ui_handler.change_lang(preferences)
+            db.save()
             os.execl(sys.executable, sys.executable,  *sys.argv)
 
         elif user_choice == 8:
