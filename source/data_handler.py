@@ -2,6 +2,7 @@
 import json
 import sys
 from ui_handler import texts
+from __init__ import VERSION
 
 while True:
     try:
@@ -31,9 +32,13 @@ if sport == 1:
     try:
         with open('basketball.json', 'r', encoding='utf-8') as f:
             db = json.load(f)
+            if tuple(map(int, db['version'].split('.'))) < (1, 1, 2):
+                print(f'{texts["unsupported_version"]}: {db["version"]}version')
+                input('Enter to continue')
+                sys.exit(1)
     except FileNotFoundError:
         player = input(f"{texts["enter_name"]}: ")
-        db = {"player": player, "games": []}
+        db = {"version": VERSION, "player": player, "games": []}
     except json.decoder.JSONDecodeError as e:
         print(f"The file is not a valid Json file or is empty\nERROR: {e}")
         input(f'{texts["enter_to_continue"]}')
@@ -47,9 +52,13 @@ elif sport == 2:
     try:
         with open('soccer.json', 'r', encoding='utf-8') as f:
             db = json.load(f)
+            if tuple(map(int, db['version'].split('.'))) < (1, 1, 2):
+                print(f'{texts["unsupported_version"]}: {db["version"]}')
+                input('Enter to continue')
+                sys.exit(1)
     except FileNotFoundError:
         player = input(f'{texts["enter_name"]}: ')
-        db = {"player": player, "games": []}
+        db = {"version": VERSION, "player": player, "games": []}
     except Exception as e:
         print(f'ERROR: {e}')
         input(f'{texts["enter_to_continue"]}')

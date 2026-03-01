@@ -1,12 +1,15 @@
 # Showoff - A simple sports stats tracker
 
-![Version](https://img.shields.io/badge/version-1.1.1-blue)
+![Version](https://img.shields.io/badge/version-1.1.2-blue)
 ![Python](https://img.shields.io/badge/python-3.9+-green)
 ![License](https://img.shields.io/badge/license-MIT-orange)
 ![made with love](https://img.shields.io/badge/made%20with-%3C3-red)
 
+> **Versions below v1.1.2 are not-supported**
+
 Showoff is a simple sports self-statistics tracker for players or their coaches, written to be easy to use and to be informational.
 Currently supports basketball, soccer.
+You can also offer your sport, or help with existing ones
 
 ## Requirements
 
@@ -26,9 +29,9 @@ You can run showoff using [binaries for your system](https://github.com/worthywo
 
 | Platform | Status                      | Latest             |
 |----------|-----------------------------|--------------------|
-| Windows  | Partial-support(Has issues) | v1.1.1             |
-| Linux    | Ready ✅                     | v1.1.1             |
-| macOS    | Could be later ⚠️           | No builds uploaded |
+| Windows  | Ready ✅                    | v1.1.2             |
+| Linux    | Ready ✅                    | v1.1.2             |
+| macOS    | Ready ✅                    | v1.1.2             |
 
 1. Download the latest binary files for your system:
    - [Latest Release](https://github.com/worthyworm/showoff/releases/latest)
@@ -36,7 +39,7 @@ You can run showoff using [binaries for your system](https://github.com/worthywo
 2. Unpack the binary in a convenient folder.
 
 3. Launch:
-   > Note for windows users:
+   > Note for Windows users:
    >
    > Windows defender may detect showoff as a malware, so it is recommended to disable defender / add showoff to exceptions
     - **Windows**: Double-click 'showoff.exe'
@@ -50,7 +53,6 @@ You can run showoff using [binaries for your system](https://github.com/worthywo
 
 ### Using the source code
 
-> Note:  Using the source code is NOT recommended. The code is being worked on and some features may be unfinished
 
 1. Clone the repository:
 
