@@ -14,13 +14,11 @@ while True:
             lang = int(input("[1] - English\n[2] - Русский\n>>>"))
             if lang == 1:
                 lang = 'en'
-                with open('preferences.json', 'w', encoding='utf-8') as f:
-                    json.dump({"lang": lang}, f, ensure_ascii=False, indent=4)
+                json.dump({"lang": lang}, f, ensure_ascii=False, indent=4)
                 break
             elif lang == 2:
                 lang = 'ru'
-                with open('preferences.json', 'w', encoding='utf-8') as f:
-                    json.dump({"lang": lang}, f, ensure_ascii=False, indent=4)
+                json.dump({"lang": lang}, f, ensure_ascii=False, indent=4)
                 break
             else:
                 print("Out of range.")
@@ -47,19 +45,18 @@ SETTINGS_MENU = f"""
 
 DESCRIPTION = f"{texts["description"]}\nhttps://github.com/worthyworm/showoff"
 
-def change_lang(preferences):
-    if lang == 'en':
-        with open('preferences.json', 'w', encoding='utf-8') as f:
+def change_lang(preferences, lang):
+    with open('preferences.json', 'w', encoding='utf-8') as f:
+        if lang == 'en':
             preferences['lang'] = 'ru'
             json.dump(preferences, f, ensure_ascii=False, indent=4)
-        print("Язык изменен на русский.")
-        input("Enter чтобы продолжить...")
-    elif lang == 'ru':
-        with open('preferences.json', 'w', encoding='utf-8') as f:
+            print("Язык изменен на русский.")
+            input("Enter чтобы продолжить...")
+        elif lang == 'ru':
             preferences['lang'] = 'en'
             json.dump(preferences, f, ensure_ascii=False, indent=4)
-        print("Language set to English.")
-        input("Enter to continue...")
+            print("Language set to English.")
+            input("Enter to continue...")
 
 class Menu:
 

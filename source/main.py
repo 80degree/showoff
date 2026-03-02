@@ -83,7 +83,7 @@ def main():
             print(f'{texts["settings"]}:')
             choice = Menu.settings_menu()
             if choice == 1:
-                ui_handler.change_lang(preferences)
+                ui_handler.change_lang(preferences, ui_handler.lang)
                 db.save()
                 os.execl(sys.executable, sys.executable, *sys.argv)
             elif choice == 2:
