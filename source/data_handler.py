@@ -165,6 +165,9 @@ def add_match():
 
 
 def save():
+    if db['version'] != VERSION:
+        db['version'] = VERSION
+
     if sport == 1:
         try:
             with open('basketball.json', 'w', encoding='utf-8') as f:
