@@ -27,11 +27,11 @@ You can run showoff using [binaries for your system](https://github.com/worthywo
 
 ### Binaries status
 
-| Platform | Status                      | Latest             |
+| Platform | Latest Status               | Latest Uploaded    |
 |----------|-----------------------------|--------------------|
-| Windows  | Ready ✅                    | v2.0.0             |
-| Linux    | Ready ✅                    | v2.0.0             |
-| macOS    | Ready ✅                    | v2.0.0             |
+| Windows  | Awaits building             | v2.0.0             |
+| Linux    | Ready ✅                    | v2.1.0             |
+| macOS    | Ready ✅                    | v2.1.0             |
 
 1. Download the latest binary files for your system:
    - [Latest Release](https://github.com/worthyworm/showoff/releases/latest)
