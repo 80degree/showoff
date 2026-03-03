@@ -1,6 +1,6 @@
 # Showoff - A simple sports stats tracker
 
-![Version](https://img.shields.io/badge/version-2.0.0-blue)
+![Version](https://img.shields.io/badge/version-2.1.0-blue)
 ![Python](https://img.shields.io/badge/python-3.9+-green)
 ![License](https://img.shields.io/badge/license-MIT-orange)
 ![made with love](https://img.shields.io/badge/made%20with-%3C3-red)

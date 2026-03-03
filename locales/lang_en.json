@@ -37,6 +37,7 @@
     "stats_review": "Statistics review",
     "data_export": "Data export(.csv)",
     "change_sport": "Change sport",
+    "settings": "Settings",
     "about": "About",
     "exit": "Exit",
     "description": "Showoff is a simple sports self-statistics tracker for players or their coaches, written to be easy to use and to be informational.",
@@ -51,5 +52,9 @@
     "per_game": "PER-GAME",
     "value": "VALUE",
     "change_lang": "Change language",
-    "unsupported_version": "Unsupported save version\nFor more information, see the readme"
+    "unsupported_version": "Unsupported save version\nFor more information, see the readme",
+    "changed_sport": "Sport changed to",
+    "back": "Back",
+    "name": "Name",
+    "date": "Date"
 }

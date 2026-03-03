@@ -78,6 +78,9 @@ def calculate_efficiency(points, rebounds, assists, steals, blocks, missed, miss
 
 
 def show_stats(match_index):
+    print(f'{texts["name"]}: {games[match_index]["name"]}')
+    print(f'{texts["date"]}: {games[match_index]["date"]}')
+    print("─" * 35)
     if sport == 1:
         table = [["Points", str(games[match_index]["points"])], ["Minutes", str(games[match_index]["minutes"])],
                  ["2 Pointers", f'{str(games[match_index]["2pt_shots_made"])}/{str(games[match_index]["2pt_attempts"])}'], ["3 Pointers", f'{str(games[match_index]["3pt_shots_made"])}/{str(games[match_index]["3pt_attempts"])}'],
