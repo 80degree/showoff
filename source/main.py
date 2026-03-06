@@ -36,10 +36,12 @@ def main():
     while True:
         Menu.show_info(False)
         print(f"{texts["currently_in"]} {sport}")
+        print(f"Welcome back, {data_handler.db["player"]}\nYou have {len(games)} games played.\nYour last game was on {games[-1]['date']}, you scored {games[-1]['points']} points. Keep it up!")
         user_choice = Menu.create_menu()
         if user_choice == ValueError:
             Menu.clear_screen()
             pass
+        '''
         elif user_choice == 1:
             db.add_match()
             print(f"{texts["added"]}")
@@ -78,8 +80,52 @@ def main():
         elif user_choice == 4:
             export.export_to_csv(db.sport)
             Menu.clear_screen()
+        '''
+        if user_choice == 1:
+            print(f'{texts["games_menu"]}:')
+            choice = Menu.games_menu()
+            if choice == ValueError:
+                Menu.clear_screen()
+                pass
+            if choice == 1:
+                db.add_match()
+                print(f"{texts["added"]}")
+                db.save()
+                input(f"{texts["enter_to_continue"]}... ")
+                Menu.clear_screen()
+            elif choice == 2:
+                games_count = len(games)
+                for i in range(games_count):
+                    print(f"{i + 1} - {str(games[i]['name'])}")
+                while True:
+                    try:
+                        choice = input(f"{texts["game_to_show"]}\n")
+                        if choice != '' and int(choice) - 1 in range(games_count):
+                            stats.show_stats(int(choice) - 1)
+                            break
+                        else:
+                            print(f"{texts["game_index_out"]}.")
+                            break
 
-        elif user_choice == 5:
+                    except ValueError:
+                        print("Invalid input.")
+
+                    except Exception as e:
+                        print(f'ERROR: {e}')
+
+                input(f"{texts["enter_to_continue"]}... ")
+                Menu.clear_screen()
+
+            elif choice == 3:
+                stats.stats_review()
+                input(f"{texts["enter_to_continue"]}... ")
+                Menu.clear_screen()
+
+            elif choice == 4:
+                export.export_to_csv(db.sport)
+                Menu.clear_screen()
+
+        elif user_choice == 2:
             print(f'{texts["settings"]}:')
             choice = Menu.settings_menu()
             if choice == 1:
@@ -95,13 +141,13 @@ def main():
             elif choice == ValueError:
                 pass
 
-        elif user_choice == 6:
+        elif user_choice == 3:
             Menu.clear_screen()
             Menu.show_info(True)
             input(f"{texts["enter_to_continue"]}... ")
             Menu.clear_screen()
 
-        elif user_choice == 7:
+        elif user_choice == 4:
             break
 
 

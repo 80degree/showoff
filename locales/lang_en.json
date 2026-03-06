@@ -36,6 +36,7 @@
     "enter_to_continue": "Enter to continue",
     "game_to_show": "What game to show?(Leave blank to exit)",
     "game_index_out": "Game index out of range",
+    "games_menu": "Games menu",
     "add_game": "Add a game",
     "view_games": "View your games",
     "stats_review": "Statistics review",
