@@ -36,7 +36,10 @@ def main():
     while True:
         Menu.show_info(False)
         print(f"{texts["currently_in"]} {sport}")
-        print(f"Welcome back, {data_handler.db["player"]}\nYou have {len(games)} games played.\nYour last game was on {games[-1]['date']}, you scored {games[-1]['points']} points. Keep it up!")
+        try:
+            print(f"{texts['welcome_back']}, {data_handler.db['player']}\n{texts['games_played']}: {len(games)}.\n{texts['last_game']}: {games[-1]['date']}, {texts['game_points']}: {games[-1]['points']}. {texts['keep_up']}!")
+        except IndexError:
+            pass
         user_choice = Menu.create_menu()
         if user_choice == ValueError:
             Menu.clear_screen()

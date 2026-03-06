@@ -62,5 +62,9 @@
     "back": "Back",
     "name": "Name",
     "date": "Date",
-    "player": "Player"
+    "player": "Player",
+    "welcome_back": "Welcome back!",
+    "games_played": "Games played",
+    "last_game": "The last game was on",
+    "keep_up": "Keep up"
 }
