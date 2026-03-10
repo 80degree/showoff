@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/badge/version-2.1.0-blue)
 ![Python](https://img.shields.io/badge/python-3.9+-green)
-![License](https://img.shields.io/badge/license-MIT-orange)
+![License](https://img.shields.io/badge/license-GPLv3-orange)
 ![made with love](https://img.shields.io/badge/made%20with-%3C3-red)
 
 > **Versions below v2.0.0 are temporarily not-supported. Stay tuned for updates!**
