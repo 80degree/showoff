@@ -27,11 +27,11 @@ def stats_review():
             print(f"{texts["no_saved_games"]}.")
             return 
     
-        table = [["Points", all_points, round(all_points / all_games, 2)], ["Minutes", all_minutes, round(all_minutes / all_games, 2)],
-                ["2 Pointers", all_2pt, round(all_2pt / all_games, 2)], ["3 Pointers", all_3pt, round(all_3pt / all_games, 2)],
-                ["Assists", all_assists, round(all_assists / all_games, 2)], ["Rebounds", all_rebounds, round(all_rebounds / all_games, 2)], 
-                ["Blocks", all_blocks, round(all_blocks / all_games, 2)], ["Steals", all_steals, round(all_steals / all_games, 2)], 
-                ["Missed", all_missed, round(all_missed / all_games, 2)], ["Missed Free Throws", all_missed_free_throws, round(all_missed_free_throws / all_games, 2)]
+        table = [[texts["game_points"], all_points, round(all_points / all_games, 2)], [texts["game_minutes"], all_minutes, round(all_minutes / all_games, 2)],
+                [texts["game_2pt"], all_2pt, round(all_2pt / all_games, 2)], [texts["game_3pt"], all_3pt, round(all_3pt / all_games, 2)],
+                [texts["game_assists"], all_assists, round(all_assists / all_games, 2)], [texts["game_rebounds"], all_rebounds, round(all_rebounds / all_games, 2)],
+                [texts["game_blocks"], all_blocks, round(all_blocks / all_games, 2)], [texts["game_steals"], all_steals, round(all_steals / all_games, 2)],
+                [texts["game_missed"], all_missed, round(all_missed / all_games, 2)], [texts["game_missed_free_throws"], all_missed_free_throws, round(all_missed_free_throws / all_games, 2)]
                 ]
 
         print(f"{f'{texts["stat"]}':<20} {f'{texts["all_time"]}':<10} {f'{texts["per_game"]}'}")
@@ -78,16 +78,17 @@ def calculate_efficiency(points, rebounds, assists, steals, blocks, missed, miss
 
 
 def show_stats(match_index):
+    print(f'{texts["player"]}: {data_handler.db["player"]}')
     print(f'{texts["name"]}: {games[match_index]["name"]}')
     print(f'{texts["date"]}: {games[match_index]["date"]}')
     print("─" * 35)
     if sport == 1:
-        table = [["Points", str(games[match_index]["points"])], ["Minutes", str(games[match_index]["minutes"])],
-                 ["2 Pointers", f'{str(games[match_index]["2pt_shots_made"])}/{str(games[match_index]["2pt_attempts"])}'], ["3 Pointers", f'{str(games[match_index]["3pt_shots_made"])}/{str(games[match_index]["3pt_attempts"])}'],
-                 ["Assists", str(games[match_index]["assists"])], ["Rebounds", str(games[match_index]["rebounds"])],
-                 ["Blocks", str(games[match_index]["blocks"])], ["Steals", str(games[match_index]["steals"])],
-                 ["Personal fouls", str(games[match_index]["personal_fouls"])], ["Missed Free Throws", str(games[match_index]["missed_free_throws"])],
-                 ["Turnovers", str(games[match_index]["turnovers"])], ["Result", str(games[match_index]["result"])]
+        table = [[texts["game_points"], str(games[match_index]["points"])], [texts["game_minutes"], str(games[match_index]["minutes"])],
+                 [texts["game_2pt"], f'{str(games[match_index]["2pt_shots_made"])}/{str(games[match_index]["2pt_attempts"])}'], [texts["game_3pt"], f'{str(games[match_index]["3pt_shots_made"])}/{str(games[match_index]["3pt_attempts"])}'],
+                 [texts["game_assists"], str(games[match_index]["assists"])], [texts["game_rebounds"], str(games[match_index]["rebounds"])],
+                 [texts["game_blocks"], str(games[match_index]["blocks"])], [texts["game_steals"], str(games[match_index]["steals"])],
+                 [texts["game_personal_fouls"], str(games[match_index]["personal_fouls"])], [texts["game_missed_free_throws"], str(games[match_index]["missed_free_throws"])],
+                 [texts["game_turnovers"], str(games[match_index]["turnovers"])], [texts["game_result"], str(games[match_index]["result"])]
                  ]
         print(f"{f'{texts["stat"]}':<20} {f'{texts["value"]}'}")
         print("─" * 35)
@@ -96,11 +97,11 @@ def show_stats(match_index):
         print("─" * 35)
 
     if sport == 2:
-        table = [["Minutes", str(games[match_index]["minutes"])], ["Goals", str(games[match_index]["goals"])],
-                 ["Assists", str(games[match_index]["assists"])], ["Shots", str(games[match_index]["shots"])],
-                 ["Saves", str(games[match_index]["saves"])], ["Steals", str(games[match_index]["steals"])],
-                 ["Yellow Cards", str(games[match_index]["yellow_cards"])], ["Red Cards", str(games[match_index]["red_cards"])],
-                 ["Result", str(games[match_index]["result"])]
+        table = [[texts["game_minutes"], str(games[match_index]["minutes"])], [texts["game_goals"], str(games[match_index]["goals"])],
+                 [texts["game_assists"], str(games[match_index]["assists"])], [texts["game_shots"], str(games[match_index]["shots"])],
+                 [texts["game_saves"], str(games[match_index]["saves"])], [texts["game_steals"], str(games[match_index]["steals"])],
+                 [texts["game_yellow_cards"], str(games[match_index]["yellow_cards"])], [texts["game_red_cards"], str(games[match_index]["red_cards"])],
+                 [texts["game_result"], str(games[match_index]["result"])]
                  ]
         print(f"{f'{texts["stat"]}':<20} {f'{texts["value"]}'}")
         print("─" * 35)
