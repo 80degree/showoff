@@ -11,17 +11,20 @@ while True:
         break
     except FileNotFoundError:
         with open('preferences.json', 'w', encoding='utf-8') as f:
-            lang = int(input("[1] - English\n[2] - Русский\n>>>"))
-            if lang == 1:
-                lang = 'en'
-                json.dump({"lang": lang}, f, ensure_ascii=False, indent=4)
-                break
-            elif lang == 2:
-                lang = 'ru'
-                json.dump({"lang": lang}, f, ensure_ascii=False, indent=4)
-                break
-            else:
-                print("Out of range.")
+            try:
+                lang = int(input("[1] - English\n[2] - Русский\n>>>"))
+                if lang == 1:
+                    lang = 'en'
+                    json.dump({"lang": lang}, f, ensure_ascii=False, indent=4)
+                    break
+                elif lang == 2:
+                    lang = 'ru'
+                    json.dump({"lang": lang}, f, ensure_ascii=False, indent=4)
+                    break
+                else:
+                    print("Out of range.")
+            except ValueError:
+                print("Invalid input")
 
 
 with open(f'locales/lang_{lang}.json', 'r', encoding='utf-8') as f:
