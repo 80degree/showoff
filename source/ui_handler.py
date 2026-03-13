@@ -43,7 +43,7 @@ SETTINGS_MENU = f"""
 [3] - {texts["back"]}
 """
 
-DESCRIPTION = f"{texts["description"]}\nhttps://github.com/worthyworm/showoff"
+DESCRIPTION = f"{texts["description"]}\nhttps://github.com/80degree/showoff"
 
 def change_lang(preferences, lang):
     with open('preferences.json', 'w', encoding='utf-8') as f:
