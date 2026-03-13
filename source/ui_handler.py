@@ -51,7 +51,7 @@ GAMES_MENU = f"""
 [Enter] - {texts["back"]}
 """
 
-DESCRIPTION =f"{texts["description"]}\nhttps://github.com/worthyworm/showoff"
+DESCRIPTION = f"{texts["description"]}\nhttps://github.com/80degree/showoff"
 
 def change_lang(preferences, lang):
     with open('preferences.json', 'w', encoding='utf-8') as f:
@@ -114,3 +114,4 @@ class Menu:
             return choice
         except Exception as e:
             print(f'ERROR: {e}')
+            
