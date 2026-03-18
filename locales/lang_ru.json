@@ -66,5 +66,11 @@
     "welcome_back": "С возвращением",
     "games_played": "Сыграно игр",
     "last_game": "Последняя игра была",
-    "keep_up": "Продолжайте в том же духе"
+    "keep_up": "Продолжайте в том же духе",
+    "courtcv": "экспортируйте статистику в форме pdf/html",
+    "data_formatting": "Помощь с форматированием файлов - https://github.com/80degree/CourtCV",
+    "img_path": "Путь к изображению",
+    "data_path": "Путь к данным",
+    "games_path": "Путь к играм",
+    "output_format": "Формат вывода"
 }

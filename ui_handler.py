@@ -1,16 +1,16 @@
 import os
 import json
 
-from __init__ import INFO
+from __init__ import INFO, RUNNING_DIR
 
 while True:
     try:
-        with open('preferences.json', 'r', encoding='utf-8') as f:
+        with open(f'{RUNNING_DIR}/preferences.json', 'r', encoding='utf-8') as f:
             preferences = json.load(f)
             lang = preferences['lang']
         break
     except FileNotFoundError:
-        with open('preferences.json', 'w', encoding='utf-8') as f:
+        with open(f'{RUNNING_DIR}/preferences.json', 'w', encoding='utf-8') as f:
             try:
                 lang = int(input("[1] - English\n[2] - Русский\n>>>"))
                 if lang == 1:
@@ -26,8 +26,7 @@ while True:
             except ValueError:
                 print("Invalid input")
 
-
-with open(f'locales/lang_{lang}.json', 'r', encoding='utf-8') as f:
+with open(f'{RUNNING_DIR}/locales/lang_{lang}.json', 'r', encoding='utf-8') as f:
     texts = json.load(f)
 
 MENU = f"""
@@ -48,13 +47,14 @@ GAMES_MENU = f"""
 [2] - {texts["view_games"]}
 [3] - {texts["stats_review"]}
 [4] - {texts["data_export"]}
+[5] - CourtCV - {texts["courtcv"]}
 [Enter] - {texts["back"]}
 """
 
-DESCRIPTION = f"{texts["description"]}\nhttps://github.com/80degree/showoff"
+DESCRIPTION = f"{texts["description"]}\nhttps://github.com/80degree/showoff\nUses CourtCV https://github.com/80degree/CourtCV"
 
 def change_lang(preferences, lang):
-    with open('preferences.json', 'w', encoding='utf-8') as f:
+    with open(f'{RUNNING_DIR}/preferences.json', 'w', encoding='utf-8') as f:
         if lang == 'en':
             preferences['lang'] = 'ru'
             json.dump(preferences, f, ensure_ascii=False, indent=4)

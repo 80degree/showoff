@@ -66,5 +66,11 @@
     "welcome_back": "Welcome back!",
     "games_played": "Games played",
     "last_game": "The last game was on",
-    "keep_up": "Keep up"
+    "keep_up": "Keep up",
+    "courtcv": "export your stats into pdf/html",
+    "data_formatting": "For data formatting help, see",
+    "img_path": "Path to your image",
+    "data_path": "Path to your data",
+    "games_path": "Path to your games",
+    "output_format": "Output format"
 }

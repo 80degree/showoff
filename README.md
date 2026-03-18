@@ -5,12 +5,18 @@
 ![License](https://img.shields.io/badge/license-GPLv3-orange)
 ![made with love](https://img.shields.io/badge/made%20with-%3C3-red)
 
-Showoff is a simple sports self-statistics tracker for players or their coaches, written to be easy to use and to be informational.
+Showoff - a simple app for saving, viewing and exporting sports stats
 Currently supports basketball, soccer.
+
+> Showoff uses [CourtCV](https://github.com/80degree/CourtCV)
 
 ## Requirements
 
 1. [Python 3](https://www.python.org/downloads/)
+2. Weasyprint 
+```bash 
+pip install weasyprint
+```
 
 ---
 
@@ -61,7 +67,7 @@ You can run showoff using [binaries for your system](https://github.com/80degree
 2. Run:
 
    ```bash
-   python3 source/main.py
+   python3 main.py
    ```
 
 ---
@@ -79,7 +85,7 @@ If you want to build yours binary:
 2. Build:
 
    ```bash
-   python -m nuitka --onefile --standalone --include-package-data=locales source/main.py
+   python -m nuitka --onefile --standalone --include-package-data=locales main.py
    ```
 
 3. A ready binary will be built in the same folder
