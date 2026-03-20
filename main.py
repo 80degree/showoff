@@ -35,9 +35,16 @@ elif db.sport == 2:
 def main():
     while True:
         Menu.show_info(False)
-        print(f"{texts["currently_in"]} {sport}")
         try:
-            print(f"{texts['welcome_back']}, {data_handler.db['player']}\n{texts['games_played']}: {len(games)}.\n{texts['last_game']}: {games[-1]['date']}, {texts['game_points']}: {games[-1]['points']}. {texts['keep_up']}!")
+            winstreak = stats.streak('W')
+            losestreak = stats.streak('L')
+            if losestreak == 0:
+                streak = winstreak
+                streak_text = 'winstreak'
+            else:
+                streak = losestreak
+                streak_text = 'losestreak'
+            Menu.motd(games, db.db, sport, streak, streak_text)
         except IndexError:
             pass
         user_choice = Menu.create_menu()
@@ -91,14 +98,20 @@ def main():
                 stats.stats_review()
                 input(f"{texts["enter_to_continue"]}... ")
                 Menu.clear_screen()
+            
+            #---show career highs---
+            elif choice == 4:
+                stats.highs()
+                input(f"{texts["enter_to_continue"]}... ")
+                Menu.clear_screen()
 
             #---csv export---
-            elif choice == 4:
+            elif choice == 5:
                 export.export_to_csv(db.sport)
                 Menu.clear_screen()
             
             # ---courtcv---
-            elif choice == 5:
+            elif choice == 6:
                 print(f'{texts["data_formatting"]} https://github.com/80degree/CourtCV')
                 code = ccv.create(img=input(f'{texts["img_path"]}(e.g karl-anthony.png): '), 
                            data=input(f'{texts["data_path"]}(e.g karl-anthony.json): '), 

@@ -108,3 +108,24 @@ def show_stats(match_index):
         for stat, value in table:
             print(f"{stat:<20} {value}")
         print("─" * 35)
+
+def highs():
+    print('CAREER HIGHS')
+    table = [[texts["game_points"], max(game["points"] for game in games)], [texts["game_minutes"], max(game["minutes"] for game in games)],
+            [texts["game_2pt"], f'{max(game["2pt_shots_made"] for game in games)}/{max(game["2pt_attempts"] for game in games)}'], [texts["game_3pt"], f'{max(game["3pt_shots_made"] for game in games)}/{max(game["3pt_attempts"] for game in games)}'],
+            [texts["game_assists"], max(game["assists"] for game in games)], [texts["game_rebounds"], max(game["rebounds"] for game in games)],
+            [texts["game_blocks"], max(game["blocks"] for game in games)], [texts["game_steals"], max(game["steals"] for game in games)],
+            [texts["game_personal_fouls"], max(game["personal_fouls"] for game in games)], [texts["game_missed_free_throws"], max(game["missed_free_throws"] for game in games)],
+            [texts["game_turnovers"], max(game["turnovers"] for game in games)], ["Wins", sum(g["result"] == "W" for g in games)], ["Losses", sum(g["result"] == "L" for g in games)]
+            ]
+    print(f"{f'{texts["stat"]}':<20} {f'{texts["value"]}'}")
+    print("─" * 35)
+    for stat, value in table:
+        print(f"{stat:<20} {value}")
+    print("─" * 35)
+
+def streak(result):
+    streak = 0
+    for g in games:
+        streak = streak + 1 if g["result"] == result else 0
+    return streak
