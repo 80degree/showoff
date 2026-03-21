@@ -107,20 +107,33 @@ def main():
 
             #---csv export---
             elif choice == 5:
-                export.export_to_csv(db.sport)
+                export.export(db.sport, False)
                 Menu.clear_screen()
             
             # ---courtcv---
             elif choice == 6:
-                print(f'{texts["data_formatting"]} https://github.com/80degree/CourtCV')
-                code = ccv.create(img=input(f'{texts["img_path"]}(e.g karl-anthony.png): '), 
-                           data=input(f'{texts["data_path"]}(e.g karl-anthony.json): '), 
-                           games_csv=input(f'{texts["games_path"]}(e.g karl-anthony.csv): '), 
-                           output=input(f'{texts["output_format"]}(pdf/html/both): '))
-                if code == 0:
-                    print(texts["added"])
-                else:
-                    print(texts["enter_to_continue"])
+                if sport != 'basketball':
+                    print('CourtCV is only available for basketball.')
+                try:
+                    choice = int(input("[1] - Create a sheet\n[2] - Generate files\n>>>"))
+                    if choice == 1:
+                        print(f'{texts["data_formatting"]} https://github.com/80degree/CourtCV')
+                        code = ccv.create(img=input(f'{texts["img_path"]}(e.g karl-anthony.png): '), 
+                                data=input(f'{texts["data_path"]}(e.g karl-anthony.json): '), 
+                                games_csv=input(f'{texts["games_path"]}(e.g karl-anthony.csv): '), 
+                                output=input(f'{texts["output_format"]}(pdf/html/both): '))
+                        if code == 0:
+                            print(texts["added"])
+                        else:
+                            print(texts["enter_to_continue"])
+                    if choice == 2:
+                        export.export(sport, True)
+                        print('Finished exporting into courtcv_input.csv')
+                        print('Showoff can only generate .csv for CourtCV, the json and the picture you should get yourself(see https://github.com/80degree/CourtCV)')
+                        print(texts["enter_to_continue"])
+                            
+                except Exception as e:
+                    print(f'error: {e}')
 
         #---settings menu---
         elif user_choice == 2:

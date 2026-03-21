@@ -1,6 +1,7 @@
 # Showoff - A simple sports stats tracker
 
 ![Version](https://img.shields.io/badge/version-2.1.1-blue)
+![Build Status](https://github.com/USER/REPO/actions/workflows/build.yml/badge.svg)
 ![Python](https://img.shields.io/badge/python-3.11+-green)
 ![License](https://img.shields.io/badge/license-GPLv3-orange)
 ![made with love](https://img.shields.io/badge/made%20with-%3C3-red)
@@ -27,14 +28,6 @@ You can run showoff using [binaries for your system](https://github.com/80degree
 ### Using ready-to-use binaries(recommended)
 
 > Binaries are an already pre-built packages for your system.
-
-### Binaries status
-
-| Platform | Latest Status               | Latest Uploaded    |
-|----------|-----------------------------|--------------------|
-| Windows  | Awaits building             | v2.0.0             |
-| Linux    | Ready ✅                    | v2.1.1             |
-| macOS    | Ready ✅                    | v2.1.1             |
 
 1. Download the latest binary files for your system:
    - [Latest Release](https://github.com/80degree/showoff/releases/latest)

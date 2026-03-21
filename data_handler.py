@@ -102,6 +102,7 @@ def add_match():
                 new_game = {
                     "name": input(f"{texts["game_name"]}: "),
                     "date": input(f"{texts["game_date"]}: "),
+                    "opponent": input("Opponent: "),
                     "position": positions_basketball[int(input(f'{texts["game_basketball_position"]}\n>>> ').strip()) - 1],
                     "minutes": int(input(f'{texts["game_minutes"]}: ')),
                     "points": int(input(f"{texts["game_points"]}: ")),
@@ -138,6 +139,7 @@ def add_match():
                 new_game = {
                     "name": input(f"{texts["game_name"]}: "),
                     "date": input(f"{texts["game_date"]}: "),
+                    "opponent": input("Opponent: "),
                     "position": positions_soccer[int(input(f'{texts["game_soccer_position"]}\n>>> ').strip()) - 1],
                     "minutes": int(input(f'{texts["game_minutes"]}: ')),
                     "goals": int(input(f'{texts["game_goals"]}: ')),
