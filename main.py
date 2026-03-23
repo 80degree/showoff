@@ -64,9 +64,9 @@ def main():
             #---games addition---
             if choice == 1:
                 db.add_match()
-                print(f"{texts["added"]}")
+                print(texts["added"])
                 db.save()
-                input(f"{texts["enter_to_continue"]}... ")
+                input(texts["enter_to_continue"])
                 Menu.clear_screen()
 
             #---game viewing---
@@ -81,7 +81,7 @@ def main():
                             stats.show_stats(int(choice) - 1)
                             break
                         else:
-                            print(f"{texts["game_index_out"]}.")
+                            print({texts["game_index_out"]})
                             break
 
                     except ValueError:
@@ -90,19 +90,19 @@ def main():
                     except Exception as e:
                         print(f'ERROR: {e}')
 
-                input(f"{texts["enter_to_continue"]}... ")
+                input(texts["enter_to_continue"])
                 Menu.clear_screen()
 
             #---show stats---
             elif choice == 3:
                 stats.stats_review()
-                input(f"{texts["enter_to_continue"]}... ")
+                input(texts["enter_to_continue"])
                 Menu.clear_screen()
             
             #---show career highs---
             elif choice == 4:
                 stats.highs()
-                input(f"{texts["enter_to_continue"]}... ")
+                input(texts["enter_to_continue"])
                 Menu.clear_screen()
 
             #---csv export---
@@ -113,27 +113,31 @@ def main():
             # ---courtcv---
             elif choice == 6:
                 if sport != 'basketball':
-                    print('CourtCV is only available for basketball.')
+                    print(texts["unavailable_ccv"])
+                    input(texts["enter_to_continue"])
                 try:
-                    choice = int(input("[1] - Create a sheet\n[2] - Generate files\n>>>"))
+                    choice = int(input(f"[1] - {texts["create_sheet_ccv"]}\n[2] - {texts["generate_ccv"]}\n[Enter] - {texts["back"]}\n>>> "))
                     if choice == 1:
-                        print(f'{texts["data_formatting"]} https://github.com/80degree/CourtCV')
-                        code = ccv.create(img=input(f'{texts["img_path"]}(e.g karl-anthony.png): '), 
-                                data=input(f'{texts["data_path"]}(e.g karl-anthony.json): '), 
-                                games_csv=input(f'{texts["games_path"]}(e.g karl-anthony.csv): '), 
-                                output=input(f'{texts["output_format"]}(pdf/html/both): '))
+                        print(f'{texts["data_formatting_ccv"]} https://github.com/80degree/CourtCV')
+                        code = ccv.create(img=input(f'{texts["img_path_ccv"]}(e.g karl-anthony.png): '), 
+                                data=input(f'{texts["data_path_ccv"]}(e.g karl-anthony.json): '), 
+                                games_csv=input(f'{texts["games_path_ccv"]}(e.g karl-anthony.csv): '), 
+                                output=input(f'{texts["output_format_ccv"]}(pdf/html/both): '))
                         if code == 0:
-                            print(texts["added"])
+                            print(f'{texts["finished_export_ccv"]} output')
                         else:
-                            print(texts["enter_to_continue"])
+                            input(texts["enter_to_continue"])
                     if choice == 2:
                         export.export(sport, True)
-                        print('Finished exporting into courtcv_input.csv')
-                        print('Showoff can only generate .csv for CourtCV, the json and the picture you should get yourself(see https://github.com/80degree/CourtCV)')
-                        print(texts["enter_to_continue"])
+                        print(f'{texts["finished_export_ccv"]} courtcv_input.csv')
+                        print(texts["gen_notice_ccv"])
+                        input(texts["enter_to_continue"])
+                except ValueError:
+                    pass
                             
                 except Exception as e:
                     print(f'error: {e}')
+                    input(texts["enter_to_continue"])
 
         #---settings menu---
         elif user_choice == 2:
@@ -158,7 +162,7 @@ def main():
         elif user_choice == 3:
             Menu.clear_screen()
             Menu.show_info(True)
-            input(f"{texts["enter_to_continue"]}... ")
+            input({texts["enter_to_continue"]})
             Menu.clear_screen()
 
         elif user_choice == 4:

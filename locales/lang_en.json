@@ -68,9 +68,17 @@
     "last_game": "The last game was on",
     "keep_up": "Keep up",
     "courtcv": "export your stats into pdf/html",
-    "data_formatting": "For data formatting help, see",
-    "img_path": "Path to your image",
-    "data_path": "Path to your data",
-    "games_path": "Path to your games",
-    "output_format": "Output format"
+    "data_formatting_ccv": "For data formatting help, see",
+    "img_path_ccv": "Path to your image",
+    "data_path_ccv": "Path to your data",
+    "games_path_ccv": "Path to your games",
+    "output_format_ccv": "Output format",
+    "finished_export_ccv": "Export finished into",
+    "gen_notice_ccv": "Showoff can only generate .csv for CourtCV, the json and the picture you should get yourself(see https://github.com/80degree/CourtCV)",
+    "unavailable_ccv": "CourtCV is only available for basketball.",
+    "create_sheet_ccv": "Create a stats sheet",
+    "generate_ccv": "Generate input files",
+    "your_streak": "Your on a",
+    "winstreak": "winstreak",
+    "losestreak": "losestreak"
 }

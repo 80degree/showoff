@@ -120,4 +120,4 @@ class Menu:
     def motd(games, db, sport, current_streak, streak_text):
         print(f"{texts["currently_in"]} {sport}")
         print(f"{texts['welcome_back']}, {db['player']}\n{texts['games_played']}: {len(games)}.\n{texts['last_game']}: {games[-1]['date']}, {texts['game_points']}: {games[-1]['points']}. {texts['keep_up']}!")
-        print(f"Your current {streak_text} is {current_streak}.")
+        print(f"{texts['your_streak']} {current_streak} {texts[streak_text]}.")

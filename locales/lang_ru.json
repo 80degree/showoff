@@ -68,9 +68,17 @@
     "last_game": "Последняя игра была",
     "keep_up": "Продолжайте в том же духе",
     "courtcv": "экспортируйте статистику в форме pdf/html",
-    "data_formatting": "Помощь с форматированием файлов - https://github.com/80degree/CourtCV",
-    "img_path": "Путь к изображению",
-    "data_path": "Путь к данным",
-    "games_path": "Путь к играм",
-    "output_format": "Формат вывода"
+    "data_formatting_ccv": "Помощь с форматированием файлов - https://github.com/80degree/CourtCV",
+    "img_path_ccv": "Путь к изображению",
+    "data_path_ccv": "Путь к данным",
+    "games_path_ccv": "Путь к играм",
+    "output_format_ccv": "Формат вывода",
+    "finished_export_ccv": "Экспорт завершен в",
+    "gen_notice_ccv": "Showoff может создать только .csv для CourtCV, json и фото вы должны сделать сами(смотри https://github.com/80degree/CourtCV)",
+    "unavailable_ccv": "CourtCV доступен только для баскетбола.",
+    "create_sheet_ccv": "Создать лист с данными",
+    "generate_ccv": "Создать входные файлы",
+    "your_streak": "Вы на",
+    "winstreak": "победной серии",
+    "losestreak": "проигрышной серии"
 }

@@ -1,6 +1,6 @@
 # Showoff - A simple sports stats tracker
 
-![Version](https://img.shields.io/badge/version-2.1.1-blue)
+![Version](https://img.shields.io/badge/version-2.2-blue)
 ![Build Status](https://github.com/80degree/showoff/actions/workflows/build.yml/badge.svg)
 ![Python](https://img.shields.io/badge/python-3.11+-green)
 ![License](https://img.shields.io/badge/license-GPLv3-orange)
