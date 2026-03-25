@@ -1,4 +1,5 @@
-VERSION = '2.1.1'
+import pathlib
+VERSION = '2.2'
 LOGO = """
  ▗▄▄▖▐▌    ▄▄▄  ▄   ▄  ▄▄▄  ▗▞▀▀▘▗▞▀▀▘
 ▐▌   ▐▌   █   █ █ ▄ █ █   █ ▐▌   ▐▌   
@@ -11,3 +12,4 @@ INFO = f"""
 {LOGO}
 v{VERSION} - worthyworm 2026
 """
+RUNNING_DIR = pathlib.Path().resolve()

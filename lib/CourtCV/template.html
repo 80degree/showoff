@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-EN">
+<head>
+    <title>Stats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            color: #333;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            border-bottom: 3px solid #1e40af;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .photo {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 20%;
+            margin-right: 30px;
+            border: 3px solid #1e40af;
+        }
+        .player-info h1 {
+            margin: 0;
+            color: #1e40af;
+            font-size: 32px;
+        }
+        .player-info p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: #f3f4f6;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .stat-card h3 {
+            margin: 0;
+            font-size: 24px;
+            color: #1e40af;
+        }
+        .stat-card p {
+            margin: 5px 0 0;
+            font-size: 12px;
+            color: #666;
+        }
+        .section {
+            margin-bottom: 25px;
+        }
+        .section h2 {
+            color: #1e40af;
+            border-left: 4px solid #1e40af;
+            padding-left: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background: #1e40af;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: #f9fafb;
+        }
+    </style>
+</head>
+<body>
+<!-- Header with Photo -->
+<div class="header">
+    <img src="{{player_img}}" alt="Player Photo" class="photo">
+    <div class="player-info">
+        <h1>{{player_name}}</h1>
+        <p><strong>Position:</strong> {{position}} | <strong>Height:</strong> {{height}}</p>
+        <p><strong>Team:</strong> {{team}} | <strong>Season:</strong> {{season}}</p>
+        <p><strong>This card was made using <a href="https://github.com/worthyworm/CourtCV">CourtCV</a></strong></p>
+    </div>
+</div>
+
+<!-- Key Stats -->
+<div class="stats-grid">
+    <div class="stat-card">
+        <h3>{{ppg}}</h3>
+        <p>Points Per Game</p>
+    </div>
+    <div class="stat-card">
+        <h3>{{rpg}}</h3>
+        <p>Rebounds Per Game</p>
+    </div>
+    <div class="stat-card">
+        <h3>{{apg}}</h3>
+        <p>Assists Per Game</p>
+    </div>
+    <div class="stat-card">
+        <h3>{{fg_pct}}%</h3>
+        <p>Field Goal %</p>
+    </div>
+</div>
+
+<!-- Game Log -->
+<div class="section">
+    <h2>Game Log</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Opponent</th>
+            <th>PTS</th>
+            <th>REB</th>
+            <th>AST</th>
+            <th>MIN</th>
+        </tr>
+        </thead>
+        <tbody>{{game_rows}}</tbody>
+    </table>
+</div>
+</body>
+</html>

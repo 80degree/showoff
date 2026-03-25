@@ -2,12 +2,12 @@
 import json
 import sys
 from ui_handler import texts
-from __init__ import VERSION
+from __init__ import VERSION, RUNNING_DIR
 
 sport = 0
 
 try:
-    with open('preferences.json', 'r', encoding='utf-8') as f:
+    with open(f'{RUNNING_DIR}/preferences.json', 'r', encoding='utf-8') as f:
         preferences = json.load(f)
         if preferences['sport'] == 1:
             sport = 1
@@ -29,7 +29,7 @@ while True:
             if sport > 2 or sport < 1:
                 print("Invalid option")
             else:
-                with open('preferences.json', 'w', encoding='utf-8') as f:
+                with open(f'{RUNNING_DIR}/preferences.json', 'w', encoding='utf-8') as f:
                     preferences['sport'] = sport
                     json.dump(preferences, f, ensure_ascii=False, indent=4)
                 break
@@ -46,11 +46,10 @@ while True:
 
 positions_basketball = ['PG', 'SG', 'SF', 'PF', 'C']
 positions_soccer = ['GK', 'SW', 'LB', 'CB', 'RB', 'LWB', 'RWB', 'DM', 'LM', 'CM', 'RM', 'AM', 'LW', 'SS', 'RW', 'LF', 'CF', 'RF']
-#positions_voleyball = ['OH', 'OPP', 'MB', 'S', 'L', 'DS', 'SS']
 
 if sport == 1:
     try:
-        with open('basketball.json', 'r', encoding='utf-8') as f:
+        with open(f'{RUNNING_DIR}/basketball.json', 'r', encoding='utf-8') as f:
             db = json.load(f)
             if tuple(map(int, db['version'].split('.'))) < (2, 0, 0):
                 print(f'{texts["unsupported_version"]}: {db["version"]}version')
@@ -70,7 +69,7 @@ if sport == 1:
 
 elif sport == 2:
     try:
-        with open('soccer.json', 'r', encoding='utf-8') as f:
+        with open(f'{RUNNING_DIR}/soccer.json', 'r', encoding='utf-8') as f:
             db = json.load(f)
             if tuple(map(int, db['version'].split('.'))) < (2, 0, 0):
                 print(f'{texts["unsupported_version"]}: {db["version"]}')
@@ -86,7 +85,7 @@ elif sport == 2:
 
 
 def change_sport(preferences):
-    with open('preferences.json', 'w', encoding='utf-8') as f:
+    with open(f'{RUNNING_DIR}/preferences.json', 'w', encoding='utf-8') as f:
         if preferences['sport'] == 1:
             preferences['sport'] = 2
             json.dump(preferences, f, ensure_ascii=False, indent=4)
@@ -103,6 +102,7 @@ def add_match():
                 new_game = {
                     "name": input(f"{texts["game_name"]}: "),
                     "date": input(f"{texts["game_date"]}: "),
+                    "opponent": input("Opponent: "),
                     "position": positions_basketball[int(input(f'{texts["game_basketball_position"]}\n>>> ').strip()) - 1],
                     "minutes": int(input(f'{texts["game_minutes"]}: ')),
                     "points": int(input(f"{texts["game_points"]}: ")),
@@ -139,6 +139,7 @@ def add_match():
                 new_game = {
                     "name": input(f"{texts["game_name"]}: "),
                     "date": input(f"{texts["game_date"]}: "),
+                    "opponent": input("Opponent: "),
                     "position": positions_soccer[int(input(f'{texts["game_soccer_position"]}\n>>> ').strip()) - 1],
                     "minutes": int(input(f'{texts["game_minutes"]}: ')),
                     "goals": int(input(f'{texts["game_goals"]}: ')),
@@ -170,7 +171,7 @@ def save():
 
     if sport == 1:
         try:
-            with open('basketball.json', 'w', encoding='utf-8') as f:
+            with open(f'{RUNNING_DIR}/basketball.json', 'w', encoding='utf-8') as f:
                 json.dump(db, f, ensure_ascii=False, indent=4)
         except FileNotFoundError:
             print('File basketball.json does not exist.')
@@ -180,7 +181,7 @@ def save():
             input(f'{texts["enter_to_continue"]}')
     if sport == 2:
         try:
-            with open('soccer.json', 'w', encoding='utf-8') as f:
+            with open(f'{RUNNING_DIR}/soccer.json', 'w', encoding='utf-8') as f:
                 json.dump(db, f, ensure_ascii=False, indent=4)
         except FileNotFoundError:
             print('File soccer.json does not exist.')
