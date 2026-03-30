@@ -80,5 +80,9 @@
     "generate_ccv": "Generate input files",
     "your_streak": "Your on a",
     "winstreak": "winstreak",
-    "losestreak": "losestreak"
+    "losestreak": "losestreak",
+    "career_highs": "Career highs",
+    "wins": "Wins",
+    "losses": "Losses",
+    "result_error": "The game result should be W/L."
 }

@@ -81,7 +81,7 @@ def main():
                             stats.show_stats(int(choice) - 1)
                             break
                         else:
-                            print({texts["game_index_out"]})
+                            print(texts["game_index_out"])
                             break
 
                     except ValueError:
@@ -162,7 +162,7 @@ def main():
         elif user_choice == 3:
             Menu.clear_screen()
             Menu.show_info(True)
-            input({texts["enter_to_continue"]})
+            input(texts["enter_to_continue"])
             Menu.clear_screen()
 
         elif user_choice == 4:

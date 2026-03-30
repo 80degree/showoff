@@ -46,7 +46,7 @@ GAMES_MENU = f"""
 [1] - {texts["add_game"]}
 [2] - {texts["view_games"]}
 [3] - {texts["stats_review"]}
-[4] - Career Highs
+[4] - {texts["career_highs"]}
 [5] - {texts["data_export"]}
 [6] - CourtCV - {texts["courtcv"]}
 [Enter] - {texts["back"]}

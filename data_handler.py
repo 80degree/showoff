@@ -119,6 +119,12 @@ def add_match():
                     "turnovers": int(input(f"{texts["game_turnovers"]}: ")),
                     "result": input(f"{texts["game_result"]}: ")
                 }
+                while True:
+                    if new_game["result"] not in ("W", "L"):
+                        print(texts["result_error"])
+                        new_game["result"] = input(f"{texts["game_result"]}: ")
+                    else:
+                        break
                 break
             except ValueError:
                 print(f'Invalid input')
