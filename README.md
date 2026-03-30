@@ -1,6 +1,6 @@
 # Showoff - A simple sports stats tracker
 
-![Version](https://img.shields.io/badge/version-2.2-blue)
+![Version](https://img.shields.io/badge/version-2.2.1-blue)
 ![Python](https://img.shields.io/badge/python-3.11+-green)
 ![License](https://img.shields.io/badge/license-GPLv3-orange)
 ![made with love](https://img.shields.io/badge/made%20with-%3C3-red)
@@ -37,6 +37,10 @@ You can run showoff using [binaries for your system](https://github.com/80degree
    > Note for Windows users:
    >
    > Windows defender may detect showoff as a malware, so it is recommended to disable defender / add showoff to exceptions
+   >
+   > **Windows binaries may not be uploaded starting from v2.0.0. Sorry.**
+   >
+   > They should be built by user or run the code through python
     - **Windows**: Double-click 'showoff.exe'
     - **Linux/macOS**:
 
