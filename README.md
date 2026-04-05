@@ -38,14 +38,12 @@ You can run showoff using [binaries for your system](https://github.com/80degree
    >
    > Windows defender may detect showoff as a malware, so it is recommended to disable defender / add showoff to exceptions
    >
-   > **Windows binaries may not be uploaded starting from v2.0.0. Sorry.**
-   >
-   > They should be built by user or run the code through python
+   > Also, only close the application using built-in exit option. Otherwise your savedata might be corrupt or wont save at all
     - **Windows**: Double-click 'showoff.exe'
     - **Linux/macOS**:
 
       ```bash
-      ./showoff.bin
+      ./showoff
       ```
 
 ---
@@ -64,24 +62,6 @@ You can run showoff using [binaries for your system](https://github.com/80degree
 
    ```bash
    python3 main.py
-   ```
-
----
-
-### Building a binary
-
-If you want to build yours binary:
-
-1. Install Nuitka:
-
-   ```bash
-   pip install nuitka
-   ```
-
-2. Build:
-
-   ```bash
-   python -m nuitka --onefile --standalone --include-package-data=locales main.py
    ```
 
 3. A ready binary will be built in the same folder
